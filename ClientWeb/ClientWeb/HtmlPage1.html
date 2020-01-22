@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>
+                Фамилия: <input type="text" name="lastName" />
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Имя: <input type="text" name="name" />
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Отчество: <input type="text" name="patronymic" />
+            </label>
+        </div>
+
+        <div>
+            <p>Пол:</p>
+
+            <label>
+                Женский <input checked="checked" type="radio" name="gender" />
+            </label>
+            <label>
+                Мужской <input type="radio" name="gender" />
+            </label>
+        </div>
+
+        <div>
+            <p>Образование:</p>
+
+            <p>
+                <label>
+                    <input type="checkbox" name="education" /> Общее образование
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="education" /> Среднее профессиональное образование
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="education" /> Высшее образование – бакалавриат
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="education" /> Высшее образование – специалитет, магистратура
+                </label>
+            </p>
+        </div>
+
+        <div>
+            <select name="driverLicense">
+                <option selected="selected">Водительские права</option>
+                <option>Есть</option>
+                <option>Нет</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Категории водительских прав:</p>
+
+            <select name="driverLicenseCategories" size="5" multiple="multiple">
+                <option>A</option>
+                <option>A1</option>
+                <option>B</option>
+                <option>B1</option>
+                <option>C</option>
+                <option>C1</option>
+                <option>D</option>
+                <option>D1</option>
+                <option>BE</option>
+                <option>CE</option>
+                <option>C1E</option>
+                <option>DE</option>
+                <option>D1E</option>
+                <option>M</option>
+                <option>Tm</option>
+                <option>Tb</option>
+            </select>
+        </div>
+
+        <div>
+            <label>
+                О себе: <textarea rows="5" cols="30" name="about"></textarea>
+            </label>
+        </div>
+
+        <button type="submit">Отправить заявку</button>
+    </form>
+
+    <hr />
+
+    <a href="HtmlPage2.html">На страницу 2</a>
+</body>
+</html>
