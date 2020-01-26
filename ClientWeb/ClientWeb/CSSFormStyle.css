@@ -1,0 +1,62 @@
+﻿h1 {
+    font-size: 170%;
+    font-weight: normal;
+    text-indent: 18px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+body {
+    color: #676565;
+    font-family: Arial;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form {
+    background-color: #FEEED6;
+    padding: 18px;
+    width: 700px;
+    height: 480px;
+}
+
+input, textarea {
+    border: none;
+    height: 34px;
+    width: 700px;
+    font-size: 11pt;
+    color: #999999;
+}
+input {
+    text-indent: 14px;
+}
+
+textarea {
+    width: 672px;
+    height: 84px;
+    font-family: Arial;
+    padding: 14px;
+}
+
+button {
+    width: 149px;
+    height: 32px;
+    background-color: #378DB2;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    float: right;
+    font-size: 11pt;
+}
+
+div {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
