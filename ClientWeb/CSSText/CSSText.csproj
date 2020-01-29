@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{28C7377C-0CA2-43FC-99F4-F0DE099C23F2}</ProjectGuid>
+    <ProjectGuid>{5E177035-5990-431B-A086-5D46FD96DA2F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClientWeb</RootNamespace>
-    <AssemblyName>ClientWeb</AssemblyName>
+    <RootNamespace>CSSText</RootNamespace>
+    <AssemblyName>CSSText</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -67,8 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HtmlPage1.html" />
-    <Content Include="HtmlPage2.html" />
+    <Content Include="CSSText.html" />
+    <Content Include="CSSTextStyle.css" />
+    <Content Include="Normalize.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +97,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54870</DevelopmentServerPort>
+          <DevelopmentServerPort>60074</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54870/</IISUrl>
+          <IISUrl>http://localhost:60074/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
