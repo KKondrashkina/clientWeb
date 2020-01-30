@@ -5,7 +5,6 @@
 .persons {
     max-width: 750px;
     width: 100%;
-    text-indent: 0.5em;
     font-family: sans-serif;
     font-size: 21px;
     border-collapse: collapse;
@@ -21,9 +20,8 @@
         font-weight: inherit;
     }
 
-    .persons td, th {
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .persons td, .persons th {
+        padding: 10px 11px;
         border: 1px solid #CCCCCC;
     }
 
