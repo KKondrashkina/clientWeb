@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="CSSForm.html" />
     <Content Include="CSSFormStyle.css" />
+    <Content Include="Normalize.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

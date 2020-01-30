@@ -1,51 +1,60 @@
-﻿h1 {
-    font-size: 170%;
+﻿* {
+    box-sizing: border-box;
+}
+
+.header {
+    font-size: 29px;
     font-weight: normal;
     text-indent: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
-p {
-    margin-bottom: 20px;
-    margin-top: 10px;
+.requestForm {
+    background-color: #FEEED6;
+    padding: 15px 18px;
+    height: 464px;
+    font-size: 14px;
 }
 
-body {
+.header, .requestForm {
+    max-width: 736px;
+    width: 100%;
     color: #676565;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
-label {
-    margin-bottom: 5px;
+.fieldsNames {
     font-weight: bold;
 }
 
-form {
-    background-color: #FEEED6;
-    padding: 18px;
-    width: 700px;
-    height: 480px;
-}
-
-input, textarea {
-    border: none;
+.field {
     height: 34px;
-    width: 700px;
-    font-size: 11pt;
-    color: #999999;
-}
-input {
     text-indent: 14px;
+    width: 100%;
 }
 
-textarea {
-    width: 672px;
-    height: 84px;
-    font-family: Arial;
-    padding: 14px;
+.comment {
+    height: 112px;
+    padding: 9px 13px;
+    margin-bottom: 13px;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 700px;
+    min-width: 100%;
 }
 
-button {
+.field, .comment {
+    border: none;
+    color: #444444;
+    margin-top: 7px;
+    margin-bottom: 17px;
+}
+
+.information {
+    margin-top: 0;
+}
+
+.sendButton {
     width: 149px;
     height: 32px;
     background-color: #378DB2;
@@ -53,10 +62,10 @@ button {
     font-weight: bold;
     border: none;
     float: right;
-    font-size: 11pt;
+    margin-top: 12px;
 }
 
-div {
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
+    .sendButton:hover {
+        cursor: pointer;
+        background-color: #2d7798;
+    }
