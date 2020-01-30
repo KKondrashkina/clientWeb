@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="CSSTable.html" />
     <Content Include="CSSTableStyle.css" />
+    <Content Include="Normalize.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
