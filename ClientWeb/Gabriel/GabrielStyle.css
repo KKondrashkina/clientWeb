@@ -1,0 +1,312 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+form {
+    background: linear-gradient(0, #dbdbdc, #f8fafd 70%);
+    border: 1px solid #ADAEAE;
+    border-radius: 5px;
+    width: 911px;
+    height: 646px;
+}
+
+.smallText {
+    font-size: 7pt;
+}
+
+.headerButton {
+    display: inline-block;
+    padding: 18px 0;
+    background-color: #FED40F;
+    margin-right: 1px;
+    cursor: pointer;
+    color: #846F0D;
+    text-align: center;
+    height: 60px;
+    width: 129px;
+    font-family: Candara;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+    .headerButton:hover, .headerButton:visited {
+        text-decoration: underline;
+    }
+
+    .headerButton:visited {
+        color: #D50308;
+    }
+
+    .headerButton:last-child {
+        margin-right: 0;
+    }
+
+.headerBackcolor {
+    background: linear-gradient(to top, #ffd200 20%, #caaa14 50%, #ffd200 80%);
+}
+
+.disabled {
+    color: #E1BE17;
+}
+
+    .disabled:visited, .disabled:hover {
+        color: #E1BE17;
+        text-decoration: none;
+    }
+
+.firstTable {
+    border-collapse: collapse;
+    text-align: center;
+    color: #6D6D6D;
+    font-family: Calibri;
+    margin-bottom: 3px;
+}
+
+    .firstTable thead {
+        font-size: 13px;
+        width: 909px;
+        padding-left: 7px;
+        padding-right: 13px;
+        text-align: left;
+    }
+
+        .firstTable thead tr {
+            border-bottom: 1px solid grey;
+            height: 32px;
+            display: block;
+            margin-left: 7px;
+            margin-right: 13px;
+            padding-top: 5px;
+        }
+
+    .firstTable tbody {
+        display: block;
+        overflow: auto;
+        height: 236px;
+        padding-left: 7px;
+        padding-right: 13px;
+    }
+
+    .firstTable td {
+        height: 39px;
+    }
+
+        .firstTable td:nth-of-type(1) {
+            font-size: 15px;
+        }
+
+        .firstTable td:nth-of-type(2) {
+            font-size: 12px;
+        }
+
+        .firstTable td:nth-of-type(3) {
+            font-size: 11px;
+        }
+
+        .firstTable td:nth-of-type(4) {
+            font-size: 19px;
+            font-weight: bold;
+            color: #6D6D6D;
+            font-family: Calibri;
+        }
+
+        .firstTable th:nth-of-type(1), .firstTable td:nth-of-type(1) {
+            width: 92px;
+        }
+
+        .firstTable th:nth-of-type(2), .firstTable td:nth-of-type(2) {
+            width: 43px;
+        }
+
+        .firstTable th:nth-of-type(3), .firstTable td:nth-of-type(3) {
+            width: 235px;
+        }
+
+        .firstTable th:nth-of-type(4), .firstTable td:nth-of-type(4) {
+            width: 76px;
+        }
+
+        .firstTable th:nth-of-type(5), .firstTable td:nth-of-type(5) {
+            width: 202px;
+        }
+
+        .firstTable th:nth-of-type(6), .firstTable td:nth-of-type(6) {
+            width: 241px;
+        }
+
+.comment {
+    width: 197px;
+    padding-left: 10px;
+}
+
+.etCount {
+    width: 30px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    padding-left: 3px
+}
+
+.comment, .etCount {
+    height: 19px;
+    border: 1px solid #bdbebe;
+    font-size: 10px;
+}
+
+.etRange {
+    cursor: pointer;
+}
+
+.greenButton, .grayButton {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: normal;
+    display: inline-block;
+    width: 173px;
+    height: 42px;
+    font-family: Arial, sans-serif;
+    border-bottom-left-radius: 4px;
+}
+
+    .greenButton:hover {
+        background: none;
+        background-color: #7EA92F;
+    }
+
+    .grayButton:hover {
+        background: none;
+        background-color: #C8C8C8;
+    }
+
+.greenButton {
+    background: linear-gradient(0, #7EA92F, #90BC3A);
+    border: 1px solid;
+    color: #FFFFFF;
+    border-color: #628428;
+}
+
+.grayButton {
+    background: linear-gradient(0, #C8C8C8, #FFFFFF);
+    border: 1px solid;
+    border-color: #ADAEAE;
+    color: #919191;
+    margin-left: 11px;
+}
+
+.leftButton {
+    float: left;
+}
+
+.rightButton {
+    float: right;
+}
+
+.buttons {
+    padding: 23px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.buttonMargin {
+    display: inline-block;
+    width: 173px;
+    margin-left: auto;
+}
+
+.secondTableHeader {
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6D6D6D;
+    font-family: Calibri;
+}
+
+.secondTable {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+    text-align: left;
+    font-family: Calibri;
+    color: #6D6D6D;
+}
+
+    .secondTable thead {
+        background-color: #fed515;
+        color: #6e5d0b;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
+    }
+
+    .secondTable th {
+        padding-left: 12px;
+    }
+
+    .secondTable thead tr {
+        display: block;
+        height: 30px;
+        padding-left: 18px;
+        padding-right: 16px;
+        padding-top: 7px;
+    }
+
+    .secondTable tbody {
+        display: block;
+        height: 133px;
+        overflow: auto;
+    }
+
+    .secondTable td {
+        padding-left: 12px;
+        height: 30px;
+    }
+
+        .secondTable td:not(:first-child) {
+            border-left: 1px dotted #bfc0c0;
+        }
+
+    .secondTable tbody tr:not(:first-child) {
+        border-top: 1px dotted #bfc0c0;
+    }
+
+    .secondTable .underConsideration td:not(:first-child) {
+        border-left: 1px dotted #ffffff;
+    }
+
+    .secondTable .underConsideration:not(:first-child) {
+        border-top: 1px dotted #ffffff;
+    }
+
+    .secondTable th:nth-of-type(1) {
+        width: 134px;
+    }
+
+    .secondTable td:nth-of-type(1) {
+        padding-left: 30px;
+        width: 152px;
+    }
+
+    .secondTable td:nth-of-type(2), .secondTable th:nth-of-type(2) {
+        width: 127px;
+    }
+
+    .secondTable td:nth-of-type(3), .secondTable th:nth-of-type(3) {
+        width: 130px;
+    }
+
+    .secondTable td:nth-of-type(4), .secondTable th:nth-of-type(4) {
+        width: 161px;
+    }
+
+    .secondTable td:nth-of-type(5), .secondTable th:nth-of-type(5) {
+        width: 319px;
+    }
+
+.underConsideration {
+    background-color: #b4d3f8;
+}

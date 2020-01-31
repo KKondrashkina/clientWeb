@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gabriel</title>
+    <link rel="stylesheet" type="text/css" href="Normalize.css" />
+    <link rel="stylesheet" type="text/css" href="GabrielStyle.css" />
+</head>
+<body>
+    <form>
+        <div class="headerBackcolor">
+            <a class="headerButton" href="http://123.com">
+                Gabriel
+            </a><a class="headerButton" href="http://234.com">
+                Gabriel
+                <span class="smallText">блоки</span>
+            </a><a class="headerButton" href="http://345.com">
+                Сирена
+            </a><a class="headerButton" href="http://456.com">
+                Amadeus
+            </a><a class="headerButton disabled" href="">
+                Sabre
+            </a><a class="headerButton disabled" href="">
+                Galileo
+            </a><a class="headerButton" href="http://789.com">
+                Бумажные
+            </a>
+        </div>
+
+        <table class="firstTable">
+            <thead>
+                <tr>
+                    <th>Валидатор</th>
+                    <th>Буква</th>
+                    <th>Адрес</th>
+                    <th>Остаток ЕТ</th>
+                    <th>Сколько необходимо еще ЕТ</th>
+                    <th>Комментарий</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>421-7176-1</td>
+                    <td>А</td>
+                    <td>РФ, г.Москва, ул.Усиевича, д.22, корп. 1</td>
+                    <td>10</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-7736-1</td>
+                    <td>А</td>
+                    <td>Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                    <td>35</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-3476-1</td>
+                    <td>А</td>
+                    <td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                    <td>50</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-7176-1</td>
+                    <td>А</td>
+                    <td>РФ, г.Москва, ул.Усиевича, д.22, корп. 1</td>
+                    <td>70</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-7736-1</td>
+                    <td>А</td>
+                    <td>Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                    <td>75</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-3476-1</td>
+                    <td>А</td>
+                    <td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                    <td>100</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-7176-1</td>
+                    <td>А</td>
+                    <td>РФ, г.Москва, ул.Усиевича, д.22, корп. 1</td>
+                    <td>70</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-7736-1</td>
+                    <td>А</td>
+                    <td>Moldova, Chisinau, str. Alexandru cel Bun, 98</td>
+                    <td>75</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+                <tr>
+                    <td>421-3476-1</td>
+                    <td>А</td>
+                    <td>...г.Кишинев, бульвар Штефан чел Маре, 3</td>
+                    <td>100</td>
+                    <td>
+                        <input class="etRange" type="range">
+                        <input class="etCount" type="text" placeholder="0" />
+                    </td>
+                    <td><input class="comment" type="text" placeholder="Какой-то комментарий" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="buttons clearfix">
+            <div class="leftButton">
+                <button class="greenButton" type="submit">Архив заявок</button>
+            </div>
+            <div class="rightButton">
+                <button class="greenButton" type="submit">Отменить</button>
+                <button class="grayButton" type="submit">Отправить</button>
+            </div>
+        </div>
+
+        <div class="secondTableHeader">Предыдущие заявки</div>
+
+        <table class="secondTable">
+            <thead>
+                <tr>
+                    <th>Дата, время заявки</th>
+                    <th>Номер заявки</th>
+                    <th>Статус</th>
+                    <th>Система бронирования</th>
+                    <th>Заказано</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="underConsideration">
+                    <td>21.12.2012, 08:04</td>
+                    <td>32512192E75B</td>
+                    <td>На рассмотрении</td>
+                    <td>Gabriel</td>
+                    <td>400</td>
+                </tr>
+                <tr class="underConsideration">
+                    <td>18.12.2012, 10:04</td>
+                    <td>32512122E75B</td>
+                    <td>На рассмотрении</td>
+                    <td>Amadeus</td>
+                    <td>350</td>
+                </tr>
+                <tr>
+                    <td>13.12.2012, 08:23</td>
+                    <td>32512192E75B</td>
+                    <td>Рассмотрена</td>
+                    <td>Gabriel</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>13.12.2012, 08:23</td>
+                    <td>32512192E75B</td>
+                    <td>Рассмотрена</td>
+                    <td>Gabriel</td>
+                    <td>200</td>
+                </tr>
+                <tr class="underConsideration">
+                    <td>21.12.2012, 08:04</td>
+                    <td>32512192E75B</td>
+                    <td>На рассмотрении</td>
+                    <td>Gabriel</td>
+                    <td>400</td>
+                </tr>
+                <tr class="underConsideration">
+                    <td>18.12.2012, 10:04</td>
+                    <td>32512122E75B</td>
+                    <td>На рассмотрении</td>
+                    <td>Amadeus</td>
+                    <td>350</td>
+                </tr>
+                <tr>
+                    <td>13.12.2012, 08:23</td>
+                    <td>32512192E75B</td>
+                    <td>Рассмотрена</td>
+                    <td>Gabriel</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>13.12.2012, 08:23</td>
+                    <td>32512192E75B</td>
+                    <td>Рассмотрена</td>
+                    <td>Gabriel</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
