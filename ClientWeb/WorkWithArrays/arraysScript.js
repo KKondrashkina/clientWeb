@@ -54,7 +54,6 @@ function getEvenNumbersSquares(array) {
     return evenArray.map(function (e) {
         return Math.pow(e, 2);
     });
-
 }
 
 console.log("Квадраты четных чисел этого массива: " + getEvenNumbersSquares(createArray()));
