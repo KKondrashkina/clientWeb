@@ -2,19 +2,21 @@
     box-sizing: border-box;
 }
 
-form {
+.form {
     background: linear-gradient(0, #dbdbdc, #f8fafd 70%);
     border: 1px solid #ADAEAE;
     border-radius: 5px;
-    width: 911px;
+    width: auto;
     height: 646px;
+    margin: auto;
+    max-width: 911px;
 }
 
-.smallText {
-    font-size: 7pt;
+.small-text {
+    font-size: 9px;
 }
 
-.headerButton {
+.header-button {
     display: inline-block;
     padding: 18px 0;
     background-color: #FED40F;
@@ -29,19 +31,19 @@ form {
     text-decoration: none;
 }
 
-    .headerButton:hover, .headerButton:visited {
+    .header-button:hover, .header-button:visited {
         text-decoration: underline;
     }
 
-    .headerButton:visited {
+    .header-button:visited {
         color: #D50308;
     }
 
-    .headerButton:last-child {
+    .header-button:last-child {
         margin-right: 0;
     }
 
-.headerBackcolor {
+.header-backcolor {
     background: linear-gradient(to top, #ffd200 20%, #caaa14 50%, #ffd200 80%);
 }
 
@@ -54,7 +56,7 @@ form {
         text-decoration: none;
     }
 
-.firstTable {
+.first-table {
     border-collapse: collapse;
     text-align: center;
     color: #6D6D6D;
@@ -62,7 +64,7 @@ form {
     margin-bottom: 3px;
 }
 
-    .firstTable thead {
+    .first-table thead {
         font-size: 13px;
         width: 909px;
         padding-left: 7px;
@@ -70,7 +72,7 @@ form {
         text-align: left;
     }
 
-        .firstTable thead tr {
+        .first-table thead tr {
             border-bottom: 1px solid grey;
             height: 32px;
             display: block;
@@ -79,7 +81,7 @@ form {
             padding-top: 5px;
         }
 
-    .firstTable tbody {
+    .first-table tbody {
         display: block;
         overflow: auto;
         height: 236px;
@@ -87,76 +89,76 @@ form {
         padding-right: 13px;
     }
 
-    .firstTable td {
+    .first-table td {
         height: 39px;
     }
 
-        .firstTable td:nth-of-type(1) {
+        .first-table td:nth-of-type(1) {
             font-size: 15px;
         }
 
-        .firstTable td:nth-of-type(2) {
+        .first-table td:nth-of-type(2) {
             font-size: 12px;
         }
 
-        .firstTable td:nth-of-type(3) {
+        .first-table td:nth-of-type(3) {
             font-size: 11px;
         }
 
-        .firstTable td:nth-of-type(4) {
+        .first-table td:nth-of-type(4) {
             font-size: 19px;
             font-weight: bold;
             color: #6D6D6D;
             font-family: Calibri;
         }
 
-        .firstTable th:nth-of-type(1), .firstTable td:nth-of-type(1) {
-            width: 92px;
-        }
+    .first-table th:nth-of-type(1), .firs-table td:nth-of-type(1) {
+        width: 92px;
+    }
 
-        .firstTable th:nth-of-type(2), .firstTable td:nth-of-type(2) {
-            width: 43px;
-        }
+    .first-table th:nth-of-type(2), .first-table td:nth-of-type(2) {
+        width: 43px;
+    }
 
-        .firstTable th:nth-of-type(3), .firstTable td:nth-of-type(3) {
-            width: 235px;
-        }
+    .first-table th:nth-of-type(3), .first-table td:nth-of-type(3) {
+        width: 235px;
+    }
 
-        .firstTable th:nth-of-type(4), .firstTable td:nth-of-type(4) {
-            width: 76px;
-        }
+    .first-table th:nth-of-type(4), .first-table td:nth-of-type(4) {
+        width: 76px;
+    }
 
-        .firstTable th:nth-of-type(5), .firstTable td:nth-of-type(5) {
-            width: 202px;
-        }
+    .first-table th:nth-of-type(5), .first-table td:nth-of-type(5) {
+        width: 202px;
+    }
 
-        .firstTable th:nth-of-type(6), .firstTable td:nth-of-type(6) {
-            width: 241px;
-        }
+    .first-table th:nth-of-type(6), .first-table td:nth-of-type(6) {
+        width: 241px;
+    }
 
 .comment {
     width: 197px;
     padding-left: 10px;
 }
 
-.etCount {
+.et-count {
     width: 30px;
     margin-top: 7px;
     margin-bottom: 7px;
     padding-left: 3px
 }
 
-.comment, .etCount {
+.comment, .et-count {
     height: 19px;
     border: 1px solid #bdbebe;
     font-size: 10px;
 }
 
-.etRange {
+.et-range {
     cursor: pointer;
 }
 
-.greenButton, .grayButton {
+.green-button, .gray-button {
     cursor: pointer;
     font-size: 15px;
     font-weight: normal;
@@ -167,24 +169,24 @@ form {
     border-bottom-left-radius: 4px;
 }
 
-    .greenButton:hover {
+    .green-button:hover {
         background: none;
         background-color: #7EA92F;
     }
 
-    .grayButton:hover {
+    .gray-button:hover {
         background: none;
         background-color: #C8C8C8;
     }
 
-.greenButton {
+.green-button {
     background: linear-gradient(0, #7EA92F, #90BC3A);
     border: 1px solid;
     color: #FFFFFF;
     border-color: #628428;
 }
 
-.grayButton {
+.gray-button {
     background: linear-gradient(0, #C8C8C8, #FFFFFF);
     border: 1px solid;
     border-color: #ADAEAE;
@@ -192,11 +194,11 @@ form {
     margin-left: 11px;
 }
 
-.leftButton {
+.left-button {
     float: left;
 }
 
-.rightButton {
+.right-button {
     float: right;
 }
 
@@ -210,13 +212,13 @@ form {
     clear: both;
 }
 
-.buttonMargin {
+.button-margin {
     display: inline-block;
     width: 173px;
     margin-left: auto;
 }
 
-.secondTableHeader {
+.second-table-header {
     margin-left: 25px;
     margin-top: 25px;
     margin-bottom: 14px;
@@ -226,7 +228,7 @@ form {
     font-family: Calibri;
 }
 
-.secondTable {
+.second-table {
     border-collapse: collapse;
     width: 100%;
     font-size: 13px;
@@ -235,7 +237,7 @@ form {
     color: #6D6D6D;
 }
 
-    .secondTable thead {
+    .second-table thead {
         background-color: #fed515;
         color: #6e5d0b;
         box-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -243,11 +245,11 @@ form {
         border-top-left-radius: 7px;
     }
 
-    .secondTable th {
+    .second-table th {
         padding-left: 12px;
     }
 
-    .secondTable thead tr {
+    .second-table thead tr {
         display: block;
         height: 30px;
         padding-left: 18px;
@@ -255,58 +257,58 @@ form {
         padding-top: 7px;
     }
 
-    .secondTable tbody {
+    .second-table tbody {
         display: block;
         height: 133px;
         overflow: auto;
     }
 
-    .secondTable td {
+    .second-table td {
         padding-left: 12px;
         height: 30px;
     }
 
-        .secondTable td:not(:first-child) {
+        .second-table td:not(:first-child) {
             border-left: 1px dotted #bfc0c0;
         }
 
-    .secondTable tbody tr:not(:first-child) {
+    .second-table tbody tr:not(:first-child) {
         border-top: 1px dotted #bfc0c0;
     }
 
-    .secondTable .underConsideration td:not(:first-child) {
+    .second-table .under-consideration td:not(:first-child) {
         border-left: 1px dotted #ffffff;
     }
 
-    .secondTable .underConsideration:not(:first-child) {
+    .second-table .under-consideration:not(:first-child) {
         border-top: 1px dotted #ffffff;
     }
 
-    .secondTable th:nth-of-type(1) {
+    .second-table th:nth-of-type(1) {
         width: 134px;
     }
 
-    .secondTable td:nth-of-type(1) {
+    .second-table td:nth-of-type(1) {
         padding-left: 30px;
         width: 152px;
     }
 
-    .secondTable td:nth-of-type(2), .secondTable th:nth-of-type(2) {
+    .second-table td:nth-of-type(2), .second-table th:nth-of-type(2) {
         width: 127px;
     }
 
-    .secondTable td:nth-of-type(3), .secondTable th:nth-of-type(3) {
+    .second-table td:nth-of-type(3), .second-table th:nth-of-type(3) {
         width: 130px;
     }
 
-    .secondTable td:nth-of-type(4), .secondTable th:nth-of-type(4) {
+    .second-table td:nth-of-type(4), .second-table th:nth-of-type(4) {
         width: 161px;
     }
 
-    .secondTable td:nth-of-type(5), .secondTable th:nth-of-type(5) {
+    .second-table td:nth-of-type(5), .second-table th:nth-of-type(5) {
         width: 319px;
     }
 
-.underConsideration {
+.under-consideration {
     background-color: #b4d3f8;
 }

@@ -9,21 +9,21 @@
     margin-bottom: 3px;
 }
 
-.requestForm {
+.request-form {
     background-color: #FEEED6;
     padding: 15px 18px;
     height: 464px;
     font-size: 14px;
 }
 
-.header, .requestForm {
+.header, .request-form {
     max-width: 736px;
     width: 100%;
     color: #676565;
     font-family: Arial, sans-serif;
 }
 
-.fieldsNames {
+.fields-names {
     font-weight: bold;
 }
 
@@ -54,7 +54,7 @@
     margin-top: 0;
 }
 
-.sendButton {
+.send-button {
     width: 149px;
     height: 32px;
     background-color: #378DB2;
@@ -65,7 +65,7 @@
     margin-top: 12px;
 }
 
-    .sendButton:hover {
+    .send-button:hover {
         cursor: pointer;
         background-color: #2d7798;
     }

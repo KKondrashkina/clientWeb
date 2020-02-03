@@ -2,12 +2,9 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #FEEED6;
-}
-
 .content {
     color: #676565;
+    background-color: #FEEED6;
     font-family: Arial, sans-serif;
     max-width: 740px;
     max-height: 404px;
@@ -18,7 +15,7 @@ body {
 }
 
 .header {
-    font-size: 21pt;
+    font-size: 28px;
     color: #676565;
     font-weight: normal;
     line-height: 30px;
@@ -35,23 +32,24 @@ body {
     text-decoration: line-through;
 }
 
-.item{
+.item {
     margin-bottom: 9px;
     margin-top: 0;
 }
 
-.contentItem {
+.content-item {
     margin-top: 14px;
     margin-bottom: 8px;
 }
 
 .text {
-    font-size: 11pt;
+    font-size: 15px;
     line-height: 21px;
     text-indent: 1em;
     text-align: justify;
-    margin-bottom: 10px;
-    margin-top: 0;
-    padding-top: 0;
-    padding-bottom: 0;
 }
+
+    .text p {
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
