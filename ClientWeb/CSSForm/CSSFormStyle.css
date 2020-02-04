@@ -12,7 +12,7 @@
 .request-form {
     background-color: #FEEED6;
     padding: 15px 18px;
-    height: 464px;
+    height: auto;
     font-size: 14px;
 }
 
@@ -39,7 +39,7 @@
     margin-bottom: 13px;
     margin-left: 0;
     margin-right: 0;
-    max-width: 700px;
+    max-width: 100%;
     min-width: 100%;
 }
 
@@ -55,14 +55,15 @@
 }
 
 .send-button {
+    display: block;
     width: 149px;
     height: 32px;
     background-color: #378DB2;
     color: #FFFFFF;
     font-weight: bold;
     border: none;
-    float: right;
     margin-top: 12px;
+    margin-left: auto;
 }
 
     .send-button:hover {
