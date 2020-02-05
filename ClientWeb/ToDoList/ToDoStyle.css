@@ -73,7 +73,7 @@
     text-decoration: line-through;
 }
 
-#add-todo, #todo-text {
+.button, .todo-text {
     border: none;
     height: 40px;
     outline: none;
@@ -83,7 +83,7 @@
     margin: 0;
 }
 
-#add-todo {
+.button {
     width: 50px;
     margin: 0;
     display: inline-block;
@@ -92,7 +92,7 @@
     padding: 0;
 }
 
-#todo-text {
+.todo-text {
     width: 350px;
     font-size: 20px;
     padding: 7px 0 6px 10px;
