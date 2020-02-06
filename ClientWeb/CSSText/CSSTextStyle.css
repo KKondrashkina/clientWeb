@@ -2,16 +2,18 @@
     box-sizing: border-box;
 }
 
-.content {
-    color: #676565;
-    background-color: #FEEED6;
+body {
     font-family: Arial, sans-serif;
+    color: #676565;
+}
+
+.content {
+    background-color: #FEEED6;
     max-width: 740px;
     width: auto;
     height: auto;
     margin: auto;
-    padding: 6px 10px;
-    padding-bottom: 2px;
+    padding: 6px 10px 2px 10px;
 }
 
 .header {

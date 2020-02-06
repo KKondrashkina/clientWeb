@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
     var convertButton = document.getElementById("convert");
 
     convertButton.addEventListener("click", function () {
@@ -15,13 +15,11 @@
             var blink = setInterval(() => {
                 warning.setAttribute("style", "visibility: visible;");
 
-            },
-                100);
+            }, 100);
             setTimeout(() => {
                 clearInterval(blink);
                 warning.removeAttribute("style");
-            },
-                3000);
+            }, 3000);
 
             kelvinValue.value = "";
             fahrenheitValue.value = "";
@@ -35,4 +33,4 @@
             fahrenheitValue.value = fahrenheitNumber;
         }
     });
-})();
+});
