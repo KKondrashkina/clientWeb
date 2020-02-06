@@ -1,0 +1,59 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.from {
+    float: left;
+}
+
+.to {
+    float: right;
+}
+
+.content {
+    height: 200px;
+    width: 600px;
+    background-color: #202125;
+    padding: 40px 15px 0 15px;
+}
+
+.temperature-value {
+    padding: 0 10px;
+    border: none;
+    height: 40px;
+    width: 200px;
+    outline: none;
+    color: #afb0b4;
+    font-family: Lucida Sans Unicode, sans-serif;
+    background-color: #424347;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+.measure {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Lucida Sans Unicode, sans-serif;
+}
+
+.convert-button {
+    width: 50px;
+    height: 50px;
+    margin: 35px 0 0 30px;
+    cursor: pointer;
+    font-size: 30px;
+    border: 1px solid #424347;
+    outline: none;
+    color: #afb0b4;
+    font-family: Lucida Sans Unicode, sans-serif;
+    background-color: #202125;
+}
+
+.warning {
+    color: #afb0b4;
+    font-family: Lucida Sans Unicode, sans-serif;
+    margin-top: -35px;
+    margin-left: 15px;
+    visibility: hidden;
+}

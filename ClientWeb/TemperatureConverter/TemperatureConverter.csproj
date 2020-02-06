@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConverterPage.html" />
+    <Content Include="ConverterScript.js" />
+    <Content Include="ConverterStyle.css" />
+    <Content Include="Normalize.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
