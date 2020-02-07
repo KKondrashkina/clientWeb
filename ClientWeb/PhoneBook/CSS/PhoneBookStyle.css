@@ -1,2 +1,83 @@
-﻿body {
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lucida Sans Unicode, sans-serif;
+    font-weight: normal;
+}
+
+.phone-book {
+    height: calc(100vh - 40px);
+    background-color: #202125;
+    border-bottom: 1px dotted #424347;
+}
+
+    .phone-book table {
+        background-color: #202125;
+        border-collapse: collapse;
+        font-family: Lucida Sans Unicode, sans-serif;
+        width: 100%;
+    }
+
+    .phone-book thead {
+        background-color: #40404a;
+        color: #a5a9bd;
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .phone-book tr {
+        height: 40px;
+        width: 100%;
+    }
+
+    .phone-book th, .phone-book td {
+        font-weight: normal;
+        padding: 0 10px;
+    }
+
+    .phone-book div {
+        overflow: auto;
+        height: calc(100vh - 80px);
+    }
+
+    .phone-book tbody {
+        background-color: #202125;
+        color: #fff;
+        width: 100%;
+    }
+
+    .phone-book tr:nth-child(even) {
+        background-color: #28292e;
+    }
+
+.entry-field input, .entry-field button, .entry-field span {
+    border: none;
+    height: 40px;
+    outline: none;
+    color: #afb0b4;
+    background-color: #202125;
+    margin: 0;
+}
+
+.entry-field button {
+    width: 5%;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.entry-field input {
+    width: 30%;
+    font-size: 20px;
+    padding: 7px 0 6px 10px;
+}
+
+.entry-field span {
+    display: inline-block;
+    width: 5%;
+    line-height: 43px;
+    padding: 0 10px;
 }

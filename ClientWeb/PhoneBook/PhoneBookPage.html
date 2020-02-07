@@ -7,45 +7,35 @@
     <link rel="stylesheet" type="text/css" href="CSS/PhoneBookStyle.css" />
 </head>
 <body>
-<div>
-    <div>
-        <label>
-            Фамилия: <input id="last-name" type="text" name="last-name" />
-        </label>
+    <div class="phone-book">
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Номер телефона</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+        <div>
+            <table>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <div>
-        <label>
-            Имя: <input id="name" type="text" name="name" />
-        </label>
+    <div class="entry-field">
+        <span id="number">
+            0
+        </span><input id="last-name" type="text" name="last-name" placeholder="Фамилия" 
+               /><input id="name" type="text" name="name" placeholder="Имя" 
+                 /><input id="phone-number" type="text" name="phone-number" placeholder="Номер телефона" 
+                          /><button id="add-phone" type="button">ᐅ</button>
     </div>
-    <div>
-        <label>
-            Номер телефона: <input id="phone-number" type="text" name="phone-number" />
-        </label>
-    </div>
-
-    <button id="add-phone" type="button">Добавить</button>
-</div>
-
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>№</th>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Номер телефона</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-</div>
-
-<script src="JS/jquery-3.4.1.js"></script>
+    <script src="JS/jquery-3.4.1.js"></script>
     <script src="JS/PhoneBookScript.js"></script>
 </body>
 </html>

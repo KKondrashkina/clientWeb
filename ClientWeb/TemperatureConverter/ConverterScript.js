@@ -12,25 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isNaN(celsiusNumber) || celsiusValue.value === "") {
             var warning = document.getElementById("warning");
 
-            var blink = setInterval(() => {
-                warning.setAttribute("style", "visibility: visible;");
-
-            }, 100);
-            setTimeout(() => {
-                clearInterval(blink);
+            setTimeout(function () {
                 warning.removeAttribute("style");
             }, 3000);
+
+            warning.setAttribute("style", "visibility: visible;");
 
             kelvinValue.value = "";
             fahrenheitValue.value = "";
 
             return;
-        } else {
-            var kelvinNumber = celsiusNumber + 273.15;
-            kelvinValue.value = kelvinNumber;
-
-            var fahrenheitNumber = celsiusNumber * 9 / 5 + 32;
-            fahrenheitValue.value = fahrenheitNumber;
         }
+
+        var kelvinNumber = celsiusNumber + 273.15;
+        kelvinValue.value = kelvinNumber;
+
+        var fahrenheitNumber = celsiusNumber * 9 / 5 + 32;
+        fahrenheitValue.value = fahrenheitNumber;
     });
 });

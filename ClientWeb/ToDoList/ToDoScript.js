@@ -7,14 +7,24 @@ document.addEventListener("DOMContentLoaded", function () {
         var todoText = document.getElementById("todo-text");
 
         if (todoText.value === "") {
-            var blink = setInterval(() => {
-                todoText.setAttribute("style", "background-color: #424347");
+            var color1 = 1;
 
-            }, 100);
-            setTimeout(() => {
+            var blink = setInterval(function () {
+                if (color1 === 1) {
+                    todoText.setAttribute("style", "background-color: #424347");
+
+                    color1 = 2;
+                } else {
+                    todoText.removeAttribute("style");
+
+                    color1 = 1;
+                }
+            }, 200);
+
+            setTimeout(function () {
                 clearInterval(blink);
                 todoText.removeAttribute("style");
-            }, 1000);
+            }, 2000);
 
             return;
         }
@@ -99,14 +109,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
             yes.addEventListener("mousedown", function () {
                 if (edit.value === "") {
-                    var editBlink = setInterval(() => {
-                        edit.setAttribute("style", "background-color: #626367");
+                    var editColor = 1;
 
-                    }, 100);
-                    setTimeout(() => {
+                    var editBlink = setInterval(function () {
+                        if (editColor === 1) {
+                            edit.setAttribute("style", "background-color: #626367");
+
+                            editColor = 2;
+                        } else {
+                            edit.setAttribute("style", "background-color: #424347");
+
+                            editColor = 1;
+                        }
+                    }, 200);
+
+                    setTimeout(function () {
                         clearInterval(editBlink);
                         edit.setAttribute("style", "background-color: #424347");
-                    }, 1000);
+                    }, 2000);
 
                     return;
                 }
