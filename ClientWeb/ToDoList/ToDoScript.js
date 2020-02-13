@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var deleteButton = document.createElement("button");
 
         deleteButton.setAttribute("type", "button");
+        deleteButton.setAttribute("title", "Delete");
         deleteButton.textContent = "╳";
 
         deleteButton.addEventListener("mousedown", function () {
@@ -99,11 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var yes = document.createElement("button");
 
+            yes.setAttribute("title", "Apply");
             yes.setAttribute("type", "button");
             yes.textContent = "✓";
 
             var no = document.createElement("button");
 
+            no.setAttribute("title", "Cancel");
             no.setAttribute("type", "button");
             no.textContent = "╳";
 
