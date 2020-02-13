@@ -7,18 +7,19 @@
     border: 1px solid #ADAEAE;
     border-radius: 5px;
     width: auto;
-    height: 646px;
+    height: auto;
     margin: auto;
     max-width: 911px;
+    max-height: 646px;
 }
 
 .small-text {
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .header-button {
     display: inline-block;
-    padding: 18px 0;
+    padding: 20px 0;
     background-color: #FED40F;
     margin-right: 1px;
     cursor: pointer;
@@ -26,41 +27,38 @@
     text-align: center;
     height: 60px;
     width: 129px;
-    font-family: Candara;
+    font-family: Candara, sans-serif;
     font-size: 20px;
     text-decoration: none;
 }
 
-    .header-button:hover, .header-button:visited {
-        text-decoration: underline;
-    }
+.underline:hover {
+    border-bottom: 1px solid;
+}
 
-    .header-button:visited {
-        color: #D50308;
-    }
+.gabriel-button {
+    border-bottom: 1px solid;
+    color: #D50308;
+}
 
-    .header-button:last-child {
-        margin-right: 0;
-    }
+.header-button:last-child {
+    margin-right: 0;
+}
 
 .header-backcolor {
     background: linear-gradient(to top, #ffd200 20%, #caaa14 50%, #ffd200 80%);
 }
 
 .disabled {
+    cursor: default;
     color: #E1BE17;
 }
-
-    .disabled:visited, .disabled:hover {
-        color: #E1BE17;
-        text-decoration: none;
-    }
 
 .first-table {
     border-collapse: collapse;
     text-align: center;
     color: #6D6D6D;
-    font-family: Calibri;
+    font-family: Calibri, sans-serif;
     margin-bottom: 3px;
 }
 
@@ -79,12 +77,13 @@
             margin-left: 7px;
             margin-right: 13px;
             padding-top: 5px;
+            padding-left: 7px;
         }
 
     .first-table tbody {
         display: block;
         overflow: auto;
-        height: 236px;
+        max-height: 236px;
         padding-left: 7px;
         padding-right: 13px;
     }
@@ -109,23 +108,27 @@
             font-size: 19px;
             font-weight: bold;
             color: #6D6D6D;
-            font-family: Calibri;
+            font-family: Calibri, sans-serif;
         }
 
-    .first-table th:nth-of-type(1), .firs-table td:nth-of-type(1) {
-        width: 92px;
-    }
+        .first-table th:nth-of-type(1), .first-table td:nth-of-type(1) {
+            width: 92px;
+        }
 
-    .first-table th:nth-of-type(2), .first-table td:nth-of-type(2) {
-        width: 43px;
-    }
+        .first-table th:nth-of-type(2), .first-table td:nth-of-type(2) {
+            width: 43px;
+        }
 
-    .first-table th:nth-of-type(3), .first-table td:nth-of-type(3) {
-        width: 235px;
-    }
+        .first-table th:nth-of-type(3), .first-table td:nth-of-type(3) {
+            width: 235px;
+        }
 
-    .first-table th:nth-of-type(4), .first-table td:nth-of-type(4) {
-        width: 76px;
+        .first-table td:nth-of-type(4) {
+            width: 76px;
+        }
+
+    .first-table th:nth-of-type(4) {
+        width: 88px;
     }
 
     .first-table th:nth-of-type(5), .first-table td:nth-of-type(5) {
@@ -225,7 +228,7 @@
     font-size: 20px;
     font-weight: bold;
     color: #6D6D6D;
-    font-family: Calibri;
+    font-family: Calibri, sans-serif;
 }
 
 .second-table {
@@ -233,7 +236,7 @@
     width: 100%;
     font-size: 13px;
     text-align: left;
-    font-family: Calibri;
+    font-family: Calibri, sans-serif;
     color: #6D6D6D;
 }
 
@@ -247,14 +250,14 @@
 
     .second-table th {
         padding-left: 12px;
+        height: 30px;
     }
 
     .second-table thead tr {
         display: block;
         height: 30px;
         padding-left: 18px;
-        padding-right: 16px;
-        padding-top: 7px;
+       
     }
 
     .second-table tbody {
@@ -269,19 +272,18 @@
     }
 
         .second-table td:not(:first-child) {
-            border-left: 1px dotted #bfc0c0;
+            border-left: 1px double green;
+            
         }
 
     .second-table tbody tr:not(:first-child) {
         border-top: 1px dotted #bfc0c0;
+        /*  outline: 1px dotted #ffffff;*/
     }
 
-    .second-table .under-consideration td:not(:first-child) {
-        border-left: 1px dotted #ffffff;
-    }
 
-    .second-table .under-consideration:not(:first-child) {
-        border-top: 1px dotted #ffffff;
+    .second-table th:not(:first-child) {
+        border-left: 1px dotted #bfa31a;
     }
 
     .second-table th:nth-of-type(1) {
@@ -306,7 +308,7 @@
     }
 
     .second-table td:nth-of-type(5), .second-table th:nth-of-type(5) {
-        width: 319px;
+        width: 322px;
     }
 
 .under-consideration {

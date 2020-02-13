@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     convertButton.addEventListener("click", function () {
         var celsiusValue = document.getElementById("celsius-value");
-        var celsiusNumber = Number(celsiusValue.value);
+        var celsiusTemperature = Number(celsiusValue.value);
         var fahrenheitValue = document.getElementById("fahrenheit-value");
         var kelvinValue = document.getElementById("kelvin-value");
 
-        if (isNaN(celsiusNumber) || celsiusValue.value === "") {
+        if (isNaN(celsiusTemperature) || celsiusValue.value === "") {
             var warning = document.getElementById("warning");
 
             setTimeout(function () {
-                warning.removeAttribute("style");
+                warning.style.display = "none";
             }, 3000);
 
-            warning.setAttribute("style", "visibility: visible;");
+            warning.style.display = "block";
 
             kelvinValue.value = "";
             fahrenheitValue.value = "";
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        var kelvinNumber = celsiusNumber + 273.15;
-        kelvinValue.value = kelvinNumber;
+        var kelvinTemperature = celsiusTemperature + 273.15;
+        kelvinValue.value = kelvinTemperature.toFixed(3);
 
-        var fahrenheitNumber = celsiusNumber * 9 / 5 + 32;
-        fahrenheitValue.value = fahrenheitNumber;
+        var fahrenheitTemperature = celsiusTemperature * 9 / 5 + 32;
+        fahrenheitValue.value = fahrenheitTemperature.toFixed(3);
     });
 });

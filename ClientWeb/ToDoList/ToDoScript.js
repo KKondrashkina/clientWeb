@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var blink = setInterval(function () {
                 if (color1 === 1) {
-                    todoText.setAttribute("style", "background-color: #424347");
+                    todoText.style.backgroundColor = "#424347";
 
                     color1 = 2;
                 } else {
-                    todoText.removeAttribute("style");
+                    todoText.style.backgroundColor = "#202125";
 
                     color1 = 1;
                 }
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setTimeout(function () {
                 clearInterval(blink);
-                todoText.removeAttribute("style");
+                todoText.style.backgroundColor = "#202125";
             }, 2000);
 
             return;
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             edit.setAttribute("type", "text");
             edit.setAttribute("class", "todo-text");
-            edit.setAttribute("style", "background-color: #424347");
+            edit.style.backgroundColor = "#424347";
 
             parent.appendChild(edit);
 
@@ -113,11 +113,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     var editBlink = setInterval(function () {
                         if (editColor === 1) {
-                            edit.setAttribute("style", "background-color: #626367");
+                            edit.style.backgroundColor = "#626367";
 
                             editColor = 2;
                         } else {
-                            edit.setAttribute("style", "background-color: #424347");
+                            edit.style.backgroundColor = "#424347";
 
                             editColor = 1;
                         }
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     setTimeout(function () {
                         clearInterval(editBlink);
-                        edit.setAttribute("style", "background-color: #424347");
+                        edit.style.backgroundColor = "#424347";
                     }, 2000);
 
                     return;

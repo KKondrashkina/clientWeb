@@ -11,7 +11,7 @@ $(function () {
         var isCompleteData = true;
 
         var number = $("#table-body").children().length + 1;
-        $("#number").text(number+1);
+        $("#number").text(number + 1);
 
         if (lastName === "") {
             isCompleteData = false;
@@ -88,15 +88,19 @@ $(function () {
         if (!isCompleteData) {
             return;
         }
-
+        //добавить колонку с чекбоксами по подобию html
         var column1 = $("<td></td>").text(number);
         var column2 = $("<td></td>").text(lastName);
         var column3 = $("<td></td>").text(name);
         var column4 = $("<td></td>").text(phoneNumber);
-        var column5 = $("<td></td>").text("1");
+        var column5 = $("<td></td>").text("1");//добавить кнопку удаления внутрь
 
         var row = $("<tr></tr>").append(column1, column2, column3, column4, column5);
 
         row.appendTo("#table-body");
+
+        $("#last-name").val("");
+        $("#name").val("");
+        $("#phone-number").val("");
     });
 });

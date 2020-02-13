@@ -51,9 +51,9 @@
 }
 
 .warning {
-    color: #afb0b4;
+    color: #993646;
     font-family: Lucida Sans Unicode, sans-serif;
     margin-top: -35px;
     margin-left: 15px;
-    visibility: hidden;
+    display: none;
 }
