@@ -70,7 +70,10 @@
     <Content Include="Gabriel.html" />
     <Content Include="GabrielStyle.css" />
     <Content Include="Normalize.css" />
+    <Content Include="refresh.png" />
+    <Content Include="trash.png" />
     <Content Include="Web.config" />
+    <Content Include="_refresh.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

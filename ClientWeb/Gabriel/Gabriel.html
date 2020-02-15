@@ -144,16 +144,30 @@
         </table>
 
         <div class="buttons clearfix">
-            <div class="left-button">
-                <button class="green-button" type="submit">Архив заявок</button>
+            <div class="left">
+                <button class="green-button left-button-size" type="submit">Архив заявок</button>
             </div>
-            <div class="right-button">
-                <button class="green-button" type="submit">Отменить</button>
-                <button class="gray-button" type="submit">Отправить</button>
+            <div class="right">
+                <button class="green-button right-button-size" type="submit">Отменить</button>
+                <button class="gray-button right-button-size" type="submit">Отправить</button>
             </div>
         </div>
 
-        <div class="second-table-header">Предыдущие заявки</div>
+        <table class="table-header">
+            <tbody>
+                <tr>
+                    <td class="second-table-header">
+                        Предыдущие заявки
+                    </td>
+                    <td class="refresh-time">
+                        Обновлено 13.11.2012, 15:45
+                    </td>
+                    <td>
+                        <button class="refresh" type="button"><img src="refresh.png" width="45" height="45" /></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <table class="second-table">
             <thead>
@@ -171,14 +185,20 @@
                     <td>32512192E75B</td>
                     <td>На рассмотрении</td>
                     <td>Gabriel</td>
-                    <td>400</td>
+                    <td>
+                        400
+                        <button class="right trash" type="button"><img src="trash.png" width="17" height="17" /></button>
+                    </td>
                 </tr>
                 <tr class="under-consideration">
                     <td>18.12.2012, 10:04</td>
                     <td>32512122E75B</td>
                     <td>На рассмотрении</td>
                     <td>Amadeus</td>
-                    <td>350</td>
+                    <td>
+                        350
+                        <button class="right trash" type="button"><img src="trash.png" width="17" height="17" /></button>
+                    </td>
                 </tr>
                 <tr>
                     <td>13.12.2012, 08:23</td>
