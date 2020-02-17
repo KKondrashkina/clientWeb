@@ -7,47 +7,22 @@ document.addEventListener("DOMContentLoaded", function () {
         var todoText = document.getElementById("todo-text");
 
         if (todoText.value === "") {
-            var color1 = 1;
 
-            var blink = setInterval(function () {
-                if (color1 === 1) {
-                    todoText.style.backgroundColor = "#424347";
-
-                    color1 = 2;
-                } else {
-                    todoText.style.backgroundColor = "#202125";
-
-                    color1 = 1;
-                }
-            }, 200);
-
-            setTimeout(function () {
-                clearInterval(blink);
-                todoText.style.backgroundColor = "#202125";
-            }, 2000);
+            blink(todoText, "todo-text todo-text-light", "todo-text");
 
             return;
         }
 
         var newTodoTr = document.createElement("tr");
-        var todoList = document.querySelector("#todo-list tbody");
+        var todoList = document.querySelector(".todo-list tbody");
 
         todoList.appendChild(newTodoTr);
-        newTodoTr.setAttribute("class", "hide");
-
-        newTodoTr.addEventListener("mousemove", function () {
-            newTodoTr.removeAttribute("class");
-        });
-
-        newTodoTr.addEventListener("mouseout", function () {
-            newTodoTr.setAttribute("class", "hide");
-        });
 
         var doneCheckbox = document.createElement("input");
         var doneLabel = document.createElement("label");
 
-        doneCheckbox.setAttribute("type", "checkbox");
-        doneLabel.setAttribute("class", "checkbox");
+        doneCheckbox.type = "checkbox";
+        doneLabel.className = "checkbox";
 
         var span = document.createElement("span");
 
@@ -61,9 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var deleteButton = document.createElement("button");
 
-        deleteButton.setAttribute("type", "button");
-        deleteButton.setAttribute("title", "Delete");
-        deleteButton.textContent = "╳";
+        customizeButton(deleteButton, "Delete", "╳");
 
         deleteButton.addEventListener("mousedown", function () {
             newTodoTr.parentNode.removeChild(newTodoTr);
@@ -89,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             edit.value = oldText;
 
-            edit.setAttribute("type", "text");
-            edit.setAttribute("class", "todo-text");
-            edit.style.backgroundColor = "#424347";
+            edit.type = "text";
+            edit.className = "todo-text";
+            edit.className = "todo-text edit-text-dark";
 
             parent.appendChild(edit);
 
@@ -100,63 +73,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var yes = document.createElement("button");
 
-            yes.setAttribute("title", "Apply");
-            yes.setAttribute("type", "button");
-            yes.textContent = "✓";
+            customizeButton(yes, "Apply", "✓");
 
             var no = document.createElement("button");
 
-            no.setAttribute("title", "Cancel");
-            no.setAttribute("type", "button");
-            no.textContent = "╳";
+            customizeButton(no, "Cancel", "╳");
+
+            function finishEditing() {
+                parent.removeChild(edit);
+                parent.appendChild(newTodoText);
+
+                newTodoDone.removeChild(yes);
+                newTodoDelete.removeChild(no);
+
+                newTodoDone.appendChild(doneLabel);
+                newTodoDelete.appendChild(deleteButton);
+            }
 
             yes.addEventListener("mousedown", function () {
                 if (edit.value === "") {
-                    var editColor = 1;
-
-                    var editBlink = setInterval(function () {
-                        if (editColor === 1) {
-                            edit.style.backgroundColor = "#626367";
-
-                            editColor = 2;
-                        } else {
-                            edit.style.backgroundColor = "#424347";
-
-                            editColor = 1;
-                        }
-                    }, 200);
-
-                    setTimeout(function () {
-                        clearInterval(editBlink);
-                        edit.style.backgroundColor = "#424347";
-                    }, 2000);
+                    blink(edit, "todo-text edit-text-light", "todo-text edit-text-dark");
 
                     return;
                 }
 
                 newTodoText.textContent = edit.value;
 
-                parent.removeChild(edit);
-                parent.appendChild(newTodoText);
-
-                newTodoDone.removeChild(yes);
-                newTodoDelete.removeChild(no);
-
-                newTodoDone.appendChild(doneLabel);
-                newTodoDelete.appendChild(deleteButton);
+                finishEditing();
             });
 
             no.addEventListener("mousedown", function () {
                 newTodoText.textContent = oldText;
 
-                parent.removeChild(edit);
-                parent.appendChild(newTodoText);
-
-                newTodoDone.removeChild(yes);
-                newTodoDelete.removeChild(no);
-
-                newTodoDone.appendChild(doneLabel);
-                newTodoDelete.appendChild(deleteButton);
+                finishEditing();
             });
 
             newTodoDone.appendChild(yes);
@@ -165,12 +114,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
         doneLabel.addEventListener("mousedown", function () {
             if (!doneCheckbox.checked) {
-                newTodoText.setAttribute("class", "done");
+                newTodoText.className = "done";
             } else {
-                newTodoText.removeAttribute("class");
+                newTodoText.className = "";
             }
         });
 
         todoText.value = "";
     });
+
+    function blink(element, class1, class2) {
+        var color1 = 1;
+
+        var blinking = setInterval(function () {
+            if (color1 === 1) {
+                element.className = class1;
+
+                color1 = 2;
+            } else {
+                element.className = class2;
+
+                color1 = 1;
+            }
+        }, 200);
+
+        setTimeout(function () {
+            clearInterval(blinking);
+            element.className = class2;
+        }, 2000);
+    }
+
+    function customizeButton(buttonName, title, content) {
+        buttonName.type = "button";
+        buttonName.title = title;
+        buttonName.textContent = content;
+    }
 });

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-#todo-list {
+.todo-list {
     border-collapse: collapse;
     background-color: #202125;
     width: 400px;
@@ -10,20 +10,20 @@
     font-family: Lucida Sans Unicode, sans-serif;
 }
 
-    #todo-list thead th {
+    .todo-list thead th {
         text-align: left;
         font-size: 25px;
         color: #9a9fa5;
         padding: 4px 0 4px 12px;
     }
 
-    #todo-list thead tr {
+    .todo-list thead tr {
         border-bottom: 1px solid #424347;
         height: 40px;
         width: 100%
     }
 
-    #todo-list tbody {
+    .todo-list tbody {
         display: block;
         overflow: auto;
         height: 600px;
@@ -32,7 +32,7 @@
         font-size: 16px;
     }
 
-    #todo-list td:not(:last-child) {
+    .todo-list td:not(:last-child) {
         cursor: pointer;
         max-width: 50px;
         height: auto;
@@ -54,7 +54,7 @@
     visibility: hidden;
 }
 
-#todo-list button {
+.todo-list button {
     border: none;
     margin: 0;
     display: inline-block;
@@ -118,11 +118,23 @@
     vertical-align: middle;
 }
 
-[type=checkbox]:checked + span:before {
+.todo-list [type=checkbox]:checked + span:before {
     content: '\2714';
     position: absolute;
     top: -1px;
     left: 1px;
     font-size: 20px;
     color: #999999;
+}
+
+.todo-text-light {
+    background-color: #424347;
+}
+
+.edit-text-dark {
+    background-color: #424347;
+}
+
+.edit-text-light {
+    background-color: #626367
 }
