@@ -8,19 +8,32 @@
 </head>
 <body>
     <div class="phone-book">
+        <div class="filter">
+            <input type="text" class="search-field" placeholder="Поиск" />
+            <button type="button" class="search-buttons clear-button">╳</button>
+            <span class="contacts-count"></span>
+        </div>
+
         <table>
             <thead>
-            <tr>
-                <th><label class="checkbox"><input type="checkbox"><span></span></label></th>
-                <th>№</th>
-                <th>Фамилия</th>
-                <th>Имя</th>
-                <th>Номер телефона</th>
-                <th></th>
-            </tr>
+                <tr>
+                    <th>
+                        <label class="checkbox">
+                            <input type="checkbox" />
+                            <span></span>
+                        </label>
+                        <button type="button" class="delete-button delete-selected">🗑</button>
+                    </th>
+                    <th>№</th>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Номер телефона</th>
+                    <th></th>
+                </tr>
             </thead>
         </table>
-        <div>
+
+        <div class="contacts">
             <table>
                 <tbody id="table-body">
                 </tbody>
@@ -31,11 +44,12 @@
     <div class="entry-field">
         <span id="number">
             0
-        </span><input id="last-name" type="text" name="last-name" placeholder="Фамилия" 
-               /><input id="name" type="text" name="name" placeholder="Имя" 
-                 /><input id="phone-number" type="text" name="phone-number" placeholder="Номер телефона" 
-                          /><button id="add-phone" type="button">ᐅ</button>
+            </span><input id="last-name" type="text" name="last-name" placeholder="Фамилия" 
+           /><input id="name" type="text" name="name" placeholder="Имя" 
+             /><input id="phone-number" type="text" name="phone-number" placeholder="Номер телефона" 
+               /><button id="add-phone" type="button">ᐅ</button>
     </div>
+
     <script src="JS/jquery-3.4.1.js"></script>
     <script src="JS/PhoneBookScript.js"></script>
 </body>
