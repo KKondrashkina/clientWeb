@@ -10,7 +10,7 @@
     <div class="phone-book">
         <div class="filter">
             <input type="text" class="search-field" placeholder="Поиск" />
-            <button type="button" class="search-buttons clear-button">╳</button>
+            <button type="button" title="Сбросить фильтр" class="search-button clear-button">╳</button>
             <span class="contacts-count"></span>
         </div>
 
@@ -22,7 +22,7 @@
                             <input type="checkbox" />
                             <span></span>
                         </label>
-                        <button type="button" class="delete-button delete-selected">🗑</button>
+                        <button type="button" title="Удалить выбранные контакты" class="delete-button delete-selected"><img src="trashcan.png" width="20" height="20" /></button>
                     </th>
                     <th>№</th>
                     <th>Фамилия</th>
@@ -43,11 +43,11 @@
 
     <div class="entry-field">
         <span id="number">
-            0
+            1
             </span><input id="last-name" type="text" name="last-name" placeholder="Фамилия" 
            /><input id="name" type="text" name="name" placeholder="Имя" 
              /><input id="phone-number" type="text" name="phone-number" placeholder="Номер телефона" 
-               /><button id="add-phone" type="button">ᐅ</button>
+               /><button id="add-phone" title="Добавить контакт" type="button">ᐅ</button>
     </div>
 
     <script src="JS/jquery-3.4.1.js"></script>

@@ -72,6 +72,8 @@
     <Content Include="PhoneBookPage.html" />
     <Content Include="JS\PhoneBookScript.js" />
     <Content Include="CSS\PhoneBookStyle.css" />
+    <Content Include="trash.png" />
+    <Content Include="trashcan.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

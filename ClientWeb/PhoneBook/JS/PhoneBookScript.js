@@ -1,16 +1,12 @@
 ﻿"use strict";
 
 $(function () {
-    var addButton = $("#add-phone");
-    $("#number").text("1");
-
-    $(addButton).click(function (e) {
+    $("#add-phone").click(function (e) {
         var isCompleteData = true;
         var lastName = $("#last-name").val();
 
         if (lastName === "") {
             isCompleteData = false;
-
             blink("#last-name", "Фамилия");
         }
 
@@ -18,7 +14,6 @@ $(function () {
 
         if (name === "") {
             isCompleteData = false;
-
             blink("#name", "Имя");
         }
 
@@ -26,7 +21,6 @@ $(function () {
 
         if (phoneNumber === "") {
             isCompleteData = false;
-
             blink("#phone-number", "Номер телефона");
         }
 
@@ -39,7 +33,6 @@ $(function () {
         for (var i = 0; i < phones.length; i++) {
             if ($(phones[i]).text() === phoneNumber) {
                 alert("Контакт с таким номером уже существует!");
-
                 return;
             }
         }
@@ -53,7 +46,7 @@ $(function () {
         var bodyColumn5 = $("<td></td>").text(phoneNumber);
         var bodyColumn6 = $("<td></td>");
 
-        var deleteButton = $("<button type=button>╳</button>").addClass("delete-button");
+        var deleteButton = $("<button type=button title='Удалить контакт'>╳</button>").addClass("delete-button");
         bodyColumn6.append(deleteButton);
 
         var checkbox = $("<label></label>").addClass("checkbox").append("<input type=checkbox />").append("<span></span>");
@@ -63,19 +56,18 @@ $(function () {
         bodyRow.appendTo("#table-body");
 
         deleteButton.click(function (e, isSome) {
+            if (!(isSome || confirm("Вы действительно хотите удалить контакт " + lastName + " " + name + "?"))) {
+                return;
+            }
+
+            removeContact(bodyRow, contactNumber);
+            refreshContactNumber();
+
             var allContacts = $("#table-body tr");
 
-            if (isSome || confirm("Вы действительно хотите удалить контакт " + lastName + " " + name + "?")) {
-                removeContact(bodyRow, contactNumber);
+            for (var i = 1; i < Number($("#number").text()); i++) {
+                $(allContacts[i - 1]).children(":nth-child(2)").text(i);
             }
-
-            for (var i = contactNumber - 1; i < allContacts.length; i++) {
-                var newContactNumber = Number($(allContacts[i]).children(":nth-child(2)").text()) - 1;
-
-                $(allContacts[i]).children(":nth-child(2)").text(newContactNumber);
-            }
-
-            refreshContactNumber();
         });
 
         refreshContactNumber();
@@ -88,7 +80,7 @@ $(function () {
     $(".delete-selected").click(function (e) {
         var selectedContacts = $("#table-body [type=checkbox]:checked");
 
-        if (confirm("Вы действительно хотите удалить " + selectedContacts.length + " контактов?")) {
+        if (confirm("Вы действительно хотите удалить эти контакты? (" + selectedContacts.length + ")")) {
             for (var i = 0; i < selectedContacts.length; i++) {
                 var contactRow = $($("#table-body [type=checkbox]:checked:last").parent().parent().parent());
                 var deleteButton = $($(contactRow).find(".delete-button"));
@@ -106,11 +98,10 @@ $(function () {
 
     $(".search-field").keyup(function (e) {
         var searchingText = $(".search-field").val();
-
         $("#table-body tr:not(:contains('" + searchingText + "'))").addClass("hide");
-        var filteredContacts = $("#table-body tr:contains('" + searchingText + "')").removeClass("hide");
 
-        $(".contacts-count").text("Найдено " + filteredContacts.length + " контактов");
+        var filteredContacts = $("#table-body tr:contains('" + searchingText + "')").removeClass("hide");
+        $(".contacts-count").text("Найдено контактов: " + filteredContacts.length);
 
         if (searchingText !== "") {
             $(".contacts-count").removeClass("hide");
@@ -169,8 +160,7 @@ $(function () {
 
         for (var i = 0; i < allCheckboxes.length; i++) {
             var contactRow = $(allCheckboxes[i]).parent().parent().parent();
-
-            $(allCheckboxes[i]).prop("checked", $(selectAll).is(":checked") && $(contactRow).attr("class") !== "hide");
+            $(allCheckboxes[i]).prop("checked", $(selectAll).is(":checked") && !$(contactRow).hasClass("hide"));
         }
     }
 });
