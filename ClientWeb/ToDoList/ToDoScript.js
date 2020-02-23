@@ -7,81 +7,50 @@ document.addEventListener("DOMContentLoaded", function () {
         var todoText = document.getElementById("todo-text");
 
         if (todoText.value === "") {
-
             blink(todoText, "todo-text todo-text-light", "todo-text");
-
             return;
         }
 
         var newTodoTr = document.createElement("tr");
-        var todoList = document.querySelector(".todo-list tbody");
+        newTodoTr.innerHTML = '<td><label class="checkbox"><input type="checkbox"/><span></span></label></td>';
+        newTodoTr.innerHTML += '<td><button type="button" title="Delete">╳</button></td>';
+        newTodoTr.innerHTML += "<td>" + todoText.value + "</td>";
 
+        var todoList = document.querySelector(".todo-list tbody");
         todoList.appendChild(newTodoTr);
 
-        var doneCheckbox = document.createElement("input");
-        var doneLabel = document.createElement("label");
-
-        doneCheckbox.type = "checkbox";
-        doneLabel.className = "checkbox";
-
-        var span = document.createElement("span");
-
-        doneLabel.appendChild(doneCheckbox);
-        doneLabel.appendChild(span);
-
-        var newTodoDone = document.createElement("td");
-
-        newTodoDone.appendChild(doneLabel);
-        newTodoTr.appendChild(newTodoDone);
-
-        var deleteButton = document.createElement("button");
-
-        customizeButton(deleteButton, "Delete", "╳");
+        var deleteButton = newTodoTr.children[1].firstChild;
 
         deleteButton.addEventListener("mousedown", function () {
             newTodoTr.parentNode.removeChild(newTodoTr);
         });
 
-        var newTodoDelete = document.createElement("td");
-
-        newTodoDelete.appendChild(deleteButton);
-        newTodoTr.appendChild(newTodoDelete);
-
-        var newTodoText = document.createElement("td");
-
-        newTodoText.innerText = todoText.value;
-        newTodoTr.appendChild(newTodoText);
+        var newTodoText = newTodoTr.children[2];
 
         newTodoText.addEventListener("mousedown", function () {
             var oldText = newTodoText.textContent;
-            var parent = newTodoText.parentNode;
 
-            parent.removeChild(newTodoText);
+            newTodoTr.removeChild(newTodoText);
+            newTodoTr.innerHTML += '<input type="text" class="todo-text edit-text-dark"/>';
 
-            var edit = document.createElement("input");
-
+            var edit = newTodoTr.lastChild;
             edit.value = oldText;
 
-            edit.type = "text";
-            edit.className = "todo-text";
-            edit.className = "todo-text edit-text-dark";
+            var newTodoDone = newTodoTr.children[0];
+            newTodoDone.removeChild(newTodoTr.children[0].firstChild);
 
-            parent.appendChild(edit);
-
-            newTodoDone.removeChild(doneLabel);
-            newTodoDelete.removeChild(deleteButton);
+            var newTodoDelete = newTodoTr.children[1];
+            newTodoDelete.removeChild(newTodoTr.children[1].firstChild);
 
             var yes = document.createElement("button");
-
             customizeButton(yes, "Apply", "✓");
 
             var no = document.createElement("button");
-
             customizeButton(no, "Cancel", "╳");
 
             function finishEditing() {
-                parent.removeChild(edit);
-                parent.appendChild(newTodoText);
+                newTodoTr.removeChild(edit);
+                newTodoTr.appendChild(newTodoText);
 
                 newTodoDone.removeChild(yes);
                 newTodoDelete.removeChild(no);
@@ -93,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
             yes.addEventListener("mousedown", function () {
                 if (edit.value === "") {
                     blink(edit, "todo-text edit-text-light", "todo-text edit-text-dark");
-
                     return;
                 }
 
@@ -112,8 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
             newTodoDelete.appendChild(no);
         });
 
+        var doneLabel = newTodoTr.children[0].firstChild;
+
         doneLabel.addEventListener("mousedown", function () {
-            if (!doneCheckbox.checked) {
+            if (!doneLabel.firstChild.checked) {
                 newTodoText.className = "done";
             } else {
                 newTodoText.className = "";
@@ -124,17 +94,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function blink(element, class1, class2) {
-        var color1 = 1;
+        var color = 1;
 
         var blinking = setInterval(function () {
-            if (color1 === 1) {
+            if (color === 1) {
                 element.className = class1;
-
-                color1 = 2;
+                color = 2;
             } else {
                 element.className = class2;
-
-                color1 = 1;
+                color = 1;
             }
         }, 200);
 

@@ -71,7 +71,6 @@ $(function () {
         });
 
         refreshContactNumber();
-
         clearFields();
     });
 

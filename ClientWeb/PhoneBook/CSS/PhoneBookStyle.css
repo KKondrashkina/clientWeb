@@ -120,6 +120,7 @@ body {
 }
 
 .entry-field input, .entry-field button, .entry-field span {
+    width: 100%;
     border: none;
     height: 40px;
     outline: none;
@@ -130,19 +131,16 @@ body {
 }
 
 .entry-field button {
-    width: 5%;
     cursor: pointer;
     font-size: 21px;
 }
 
 .entry-field input {
-    width: 30%;
     font-size: 20px;
     padding: 7px 0 6px 10px;
 }
 
 .entry-field span {
-    width: 5%;
     line-height: 44px;
     padding: 0 10px;
     vertical-align: 1px;
@@ -207,3 +205,15 @@ body {
     font-size: 15px;
     margin-left: 10px;
 }
+
+.in-line {
+    display: inline-block;
+}
+
+    .in-line:nth-child(1), .in-line:nth-child(5) {
+        width: 5%;
+    }
+
+    .in-line:nth-child(2), .in-line:nth-child(3), .in-line:nth-child(4) {
+        width: 30%;
+    }
