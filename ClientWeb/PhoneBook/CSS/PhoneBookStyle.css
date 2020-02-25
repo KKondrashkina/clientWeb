@@ -143,7 +143,6 @@ body {
 .entry-field span {
     line-height: 44px;
     padding: 0 10px;
-    vertical-align: 1px;
 }
 
 .delete-button, .search-button {
