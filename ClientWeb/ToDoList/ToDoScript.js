@@ -12,22 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         var newTodoTr = document.createElement("tr");
-        newTodoTr.innerHTML = '<td><label class="checkbox"><input type="checkbox"/><span></span></label></td>';
-        newTodoTr.innerHTML += '<td><button type="button" title="Delete">╳</button></td>';
-        newTodoTr.innerHTML += "<td>" + todoText.value + "</td>";
+        newTodoTr.innerHTML = '<td><label class="checkbox"><input type="checkbox"/><span></span></label></td>'
+            + '<td><button type="button" title="Delete">╳</button></td>'
+            + "<td>" + todoText.value + "</td>";
 
         var todoList = document.querySelector(".todo-list tbody");
         todoList.appendChild(newTodoTr);
 
         var deleteButton = newTodoTr.children[1].firstChild;
 
-        deleteButton.addEventListener("mousedown", function () {
+        deleteButton.addEventListener("click", function () {
             newTodoTr.parentNode.removeChild(newTodoTr);
         });
 
         var newTodoText = newTodoTr.children[2];
 
-        newTodoText.addEventListener("mousedown", function () {
+        newTodoText.addEventListener("click", function () {
             var oldText = newTodoText.textContent;
 
             newTodoTr.removeChild(newTodoText);
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 newTodoDelete.appendChild(deleteButton);
             }
 
-            yes.addEventListener("mousedown", function () {
+            yes.addEventListener("click", function () {
                 if (edit.value === "") {
                     blink(edit, "todo-text edit-text-light", "todo-text edit-text-dark");
                     return;
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 finishEditing();
             });
 
-            no.addEventListener("mousedown", function () {
+            no.addEventListener("click", function () {
                 newTodoText.textContent = oldText;
 
                 finishEditing();
@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var doneLabel = newTodoTr.children[0].firstChild;
 
-        doneLabel.addEventListener("mousedown", function () {
-            if (!doneLabel.firstChild.checked) {
+        doneLabel.addEventListener("click", function () {
+            if (doneLabel.firstChild.checked) {
                 newTodoText.className = "done";
             } else {
                 newTodoText.className = "";

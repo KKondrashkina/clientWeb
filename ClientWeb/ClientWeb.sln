@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureConverter", "Tem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBook", "PhoneBook\PhoneBook.csproj", "{25F99688-61DB-44AC-A699-D64FA899DBEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListJQuery", "TodoListJQuery\TodoListJQuery.csproj", "{26F5B845-24B1-4956-B3EA-308B5B30C4CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{25F99688-61DB-44AC-A699-D64FA899DBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25F99688-61DB-44AC-A699-D64FA899DBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25F99688-61DB-44AC-A699-D64FA899DBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F5B845-24B1-4956-B3EA-308B5B30C4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F5B845-24B1-4956-B3EA-308B5B30C4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F5B845-24B1-4956-B3EA-308B5B30C4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F5B845-24B1-4956-B3EA-308B5B30C4CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

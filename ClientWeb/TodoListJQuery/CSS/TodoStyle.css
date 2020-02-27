@@ -1,0 +1,140 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+.todo-list {
+    border-collapse: collapse;
+    background-color: #202125;
+    width: 400px;
+    border-bottom: 1px dotted #424347;
+    font-family: Lucida Sans Unicode, sans-serif;
+}
+
+    .todo-list thead th {
+        text-align: left;
+        font-size: 25px;
+        color: #9a9fa5;
+        padding: 4px 0 4px 12px;
+    }
+
+    .todo-list thead tr {
+        border-bottom: 1px solid #424347;
+        height: 40px;
+        width: 100%
+    }
+
+    .todo-list tbody {
+        display: block;
+        overflow: auto;
+        height: 600px;
+        max-width: 400px;
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .todo-list td:not(:last-child) {
+        cursor: pointer;
+        max-width: 50px;
+        height: auto;
+        padding: 0 0 0 4px;
+    }
+
+.todo td {
+    display: inline-block;
+}
+
+    .todo td:last-child {
+        margin: 5px 0;
+        max-width: 300px;
+        padding-left: 5px;
+    }
+
+.hide td:not(:last-child) {
+    display: none;
+    visibility: hidden;
+}
+
+.todo-list button {
+    border: none;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #202125;
+    height: 35px;
+    vertical-align: middle;
+    width: 50px;
+    font-size: 12px;
+    color: #999999;
+    font-weight: bold;
+}
+
+.done {
+    color: #646567;
+    text-decoration: line-through;
+}
+
+.button, .todo-text {
+    border: none;
+    height: 40px;
+    outline: none;
+    color: #afb0b4;
+    font-family: Lucida Sans Unicode, sans-serif;
+    background-color: #202125;
+    margin: 0;
+}
+
+.button {
+    width: 50px;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 21px;
+    padding: 0;
+}
+
+.todo-text {
+    width: 350px;
+    font-size: 20px;
+    padding: 7px 0 6px 10px;
+}
+
+.create-todo-field div {
+    display: inline-block;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkbox span {
+    height: 25px;
+    width: 25px;
+    border: 3px solid #999999;
+    display: inline-block;
+    position: relative;
+    background-color: #202125;
+    border-radius: 2px;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.todo-list [type=checkbox]:checked + span:before {
+    content: '\2714';
+    position: absolute;
+    top: -1px;
+    left: 1px;
+    font-size: 20px;
+    color: #999999;
+}
+
+.todo-text-light {
+    background-color: #424347;
+}
+
+.edit-text-dark {
+    background-color: #424347;
+}
+
+.edit-text-light {
+    background-color: #626367
+}
