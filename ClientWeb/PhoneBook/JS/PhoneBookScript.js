@@ -1,7 +1,7 @@
 ﻿"use strict";
 
 $(function () {
-    $("#add-phone").click(function (e) {
+    $("#add-phone").click(function () {
         var isCompleteData = true;
         var lastName = $("#last-name").val();
 
@@ -30,11 +30,19 @@ $(function () {
 
         var phones = $("#table-body tr td:nth-last-child(2)");
 
-        for (var i = 0; i < phones.length; i++) {
-            if ($(phones[i]).text() === phoneNumber) {
+        var isExist = false;
+
+        phones.each(function (index) {
+            if ($(phones[index]).text() === phoneNumber) {
                 alert("Контакт с таким номером уже существует!");
-                return;
+                isExist = true;
+
+                return false;
             }
+        });
+
+        if (isExist) {
+            return
         }
 
         var contactNumber = $("#table-body").children().length + 1;
@@ -46,7 +54,7 @@ $(function () {
         var bodyColumn5 = $("<td></td>").text(phoneNumber);
         var bodyColumn6 = $("<td></td>");
 
-        var deleteButton = $("<button type=button title='Удалить контакт'>╳</button>").addClass("delete-button");
+        var deleteButton = $("<button type='button' title='Удалить контакт'>╳</button>").addClass("delete-button");
         bodyColumn6.append(deleteButton);
 
         var checkbox = $("<label></label>").addClass("checkbox").append("<input type=checkbox />").append("<span></span>");
@@ -55,8 +63,8 @@ $(function () {
         var bodyRow = $("<tr></tr>").append(bodyColumn1, bodyColumn2, bodyColumn3, bodyColumn4, bodyColumn5, bodyColumn6);
         bodyRow.appendTo("#table-body");
 
-        deleteButton.click(function (e, isSome) {
-            if (!(isSome || confirm("Вы действительно хотите удалить контакт " + lastName + " " + name + "?"))) {
+        deleteButton.click(function (isSome) {
+            if (!isSome && !confirm("Вы действительно хотите удалить контакт " + lastName + " " + name + "?")) {
                 return;
             }
 
@@ -65,55 +73,54 @@ $(function () {
 
             var allContacts = $("#table-body tr");
 
-            for (var i = 1; i < Number($("#number").text()); i++) {
-                $(allContacts[i - 1]).children(":nth-child(2)").text(i);
-            }
+            allContacts.each(function (index) {
+                $(allContacts[index]).children(":nth-child(2)").text(index + 1);
+            });
         });
 
         refreshContactNumber();
         clearFields();
     });
 
-    var selectAll = $(".phone-book th [type = checkbox]");
+    var selectAll = $(".phone-book th [type=checkbox]");
 
-    $(".delete-selected").click(function (e) {
+    $(".delete-selected").click(function () {
         var selectedContacts = $("#table-body [type=checkbox]:checked");
 
+        if (selectedContacts.length === 0) {
+            alert("Вы не выбрали контакты для удаления!");
+            return;
+        }
+
         if (confirm("Вы действительно хотите удалить эти контакты? (" + selectedContacts.length + ")")) {
-            for (var i = 0; i < selectedContacts.length; i++) {
-                var contactRow = $($("#table-body [type=checkbox]:checked:last").parent().parent().parent());
-                var deleteButton = $($(contactRow).find(".delete-button"));
+            selectedContacts.each(function (index) {
+                var contactRow = $("#table-body [type=checkbox]:checked:last").closest("tr");
+                var deleteButton = $(contactRow).find(".delete-button");
 
                 $(deleteButton).trigger("click", true);
-            }
+            });
 
             $(selectAll).prop("checked", false);
         }
     });
 
-    $(selectAll).click(function (e) {
+    $(selectAll).click(function () {
         checkVisible();
     });
 
-    $(".search-field").keyup(function (e) {
+    $(".search-field").keyup(function () {
         var searchingText = $(".search-field").val();
         $("#table-body tr:not(:contains('" + searchingText + "'))").addClass("hide");
 
         var filteredContacts = $("#table-body tr:contains('" + searchingText + "')").removeClass("hide");
-        $(".contacts-count").text("Найдено контактов: " + filteredContacts.length);
 
-        if (searchingText !== "") {
-            $(".contacts-count").removeClass("hide");
-        } else {
-            $(".contacts-count").addClass("hide");
-        }
+        $(".contacts-count").text("Найдено контактов: " + filteredContacts.length).toggleClass("hide", searchingText === "");
 
         checkVisible();
     });
 
-    $(".clear-button").click(function (e) {
-        $(".search-field").val("");
-        $(".search-field").trigger("keyup");
+    $(".clear-button").click(function () {
+        $(".search-field").val("").trigger("keyup");
     });
 
     function blink(attributeName, placeholderText) {
@@ -157,9 +164,9 @@ $(function () {
     function checkVisible() {
         var allCheckboxes = $("#table-body [type=checkbox]");
 
-        for (var i = 0; i < allCheckboxes.length; i++) {
-            var contactRow = $(allCheckboxes[i]).parent().parent().parent();
-            $(allCheckboxes[i]).prop("checked", $(selectAll).is(":checked") && !$(contactRow).hasClass("hide"));
-        }
+        allCheckboxes.each(function (index) {
+            var contactRow = $(allCheckboxes[index]).closest("tr");
+            $(allCheckboxes[index]).prop("checked", $(selectAll).is(":checked") && !$(contactRow).hasClass("hide"));
+        });
     }
 });
