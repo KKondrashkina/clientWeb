@@ -2,29 +2,29 @@
 
 $(function () {
     $("#add-phone").click(function () {
-        var isCompleteData = true;
+        var isValid = true;
         var lastName = $("#last-name").val();
 
         if (lastName === "") {
-            isCompleteData = false;
+            isValid = false;
             blink("#last-name", "Фамилия");
         }
 
         var name = $("#name").val();
 
         if (name === "") {
-            isCompleteData = false;
+            isValid = false;
             blink("#name", "Имя");
         }
 
         var phoneNumber = $("#phone-number").val();
 
         if (phoneNumber === "") {
-            isCompleteData = false;
+            isValid = false;
             blink("#phone-number", "Номер телефона");
         }
 
-        if (!isCompleteData) {
+        if (!isValid) {
             return;
         }
 
@@ -57,13 +57,13 @@ $(function () {
         var deleteButton = $("<button type='button' title='Удалить контакт'>╳</button>").addClass("delete-button");
         bodyColumn6.append(deleteButton);
 
-        var checkbox = $("<label></label>").addClass("checkbox").append("<input type=checkbox />").append("<span></span>");
+        var checkbox = $("<label></label>").addClass("checkbox").append("<input type='checkbox' />").append("<span></span>");
         checkbox.appendTo(bodyColumn1);
 
         var bodyRow = $("<tr></tr>").append(bodyColumn1, bodyColumn2, bodyColumn3, bodyColumn4, bodyColumn5, bodyColumn6);
         bodyRow.appendTo("#table-body");
 
-        deleteButton.click(function (isSome) {
+        deleteButton.click(function (_e, isSome) {
             if (!isSome && !confirm("Вы действительно хотите удалить контакт " + lastName + " " + name + "?")) {
                 return;
             }
@@ -138,7 +138,7 @@ $(function () {
             $(attributeName).attr("placeholder", "Заполните поле");
         }, 200);
 
-        setTimeout(() => {
+        setTimeout(function () {
             clearInterval(blinking);
             $(attributeName).css("background-color", "#202125");
             $(attributeName).attr("placeholder", placeholderText);
