@@ -1,7 +1,7 @@
 ﻿"use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
-    $("#add-todo").click(function (e) {
+$(function () {
+    $("#add-todo").click(function () {
         var todoText = $("#todo-text");
 
         if (todoText.val() === "") {
@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         var newTodoTr = $("<tr></tr>")
             .append('<td><label class="checkbox"><input type="checkbox"/><span></span></label></td>')
             .append('<td><button type="button" title="Delete">╳</button></td>')
-            .append("<td>" + todoText.val() + "</td>");
+            .append("<td></td>");
+
+        newTodoTr.children("td:last").text(todoText.val());
 
         $(".todo-list tbody").append(newTodoTr);
 
@@ -20,19 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var doneLabel = newTodoTr.children("td:first").children();
 
-        doneLabel.click(function (e) {
-            doneLabel.children("input").is(":checked") ? newTodoText.addClass("done") : newTodoText.removeClass("done");
+        doneLabel.click(function () {
+            newTodoText.toggleClass("done", doneLabel.children("input").is(":checked"));
         });
 
         var deleteButton = newTodoTr.find("[title='Delete']");
 
-        deleteButton.click(function (e) {
+        deleteButton.click(function () {
             newTodoTr.remove();
         });
 
         var newTodoText = newTodoTr.children("td:last");
 
-        newTodoText.click(function (e) {
+        newTodoText.click(function () {
             var editableText = newTodoText.detach();
             var oldText = newTodoText.text();
 
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var yes = $("<button type='button' title='Apply'>✓</button>");
 
-            yes.click(function (e) {
+            yes.click(function () {
                 if (edit.val() === "") {
                     blink(edit, "edit-text-light");
                     return;
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var no = $("<button type='button' title='Cancel'>╳</button>");
 
-            no.click(function (e) {
+            no.click(function () {
                 editableText.text(oldText);
 
                 finishEditing();
