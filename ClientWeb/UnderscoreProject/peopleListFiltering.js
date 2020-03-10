@@ -54,12 +54,12 @@
         }
     ];
 
-    var averageAge = (_.chain(people)
+    var averageAge = _.chain(people)
         .pluck("age")
         .reduce(function (memo, value) {
             return memo + value;
         }, 0)
-        .value()) / people.length;
+        .value() / people.length;
 
     console.log("Средний возраст людей из списка = " + averageAge);
 
@@ -74,7 +74,7 @@
     console.log(middleAgedPeople);
 
     _.each(people, function (people) {
-        return people.fullName = people.lastName + " " + people.name;
+        people.fullName = people.lastName + " " + people.name;
     });
 
     console.log("Список людей, после добавления нового поля:");
