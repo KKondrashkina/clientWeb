@@ -48,10 +48,10 @@ $(function () {
         var contactNumber = $("#table-body").children().length + 1;
 
         var bodyColumn1 = $("<td></td>");
-        var bodyColumn2 = $("<td></td>").text(contactNumber);
-        var bodyColumn3 = $("<td></td>").text(lastName);
-        var bodyColumn4 = $("<td></td>").text(name);
-        var bodyColumn5 = $("<td></td>").text(phoneNumber);
+        var bodyColumn2 = $("<td class='contact-id'></td>").text(contactNumber);
+        var bodyColumn3 = $("<td class='last-name'></td>").text(lastName);
+        var bodyColumn4 = $("<td class='name'/td>").text(name);
+        var bodyColumn5 = $("<td class='phone'></td>").text(phoneNumber);
         var bodyColumn6 = $("<td></td>");
 
         var deleteButton = $("<button type='button' title='Удалить контакт'>╳</button>").addClass("delete-button");
@@ -63,7 +63,7 @@ $(function () {
         var bodyRow = $("<tr></tr>").append(bodyColumn1, bodyColumn2, bodyColumn3, bodyColumn4, bodyColumn5, bodyColumn6);
         bodyRow.appendTo("#table-body");
 
-        deleteButton.click(function (_e, isSome) {
+        deleteButton.click(function (e, isSome) {
             if (!isSome && !confirm("Вы действительно хотите удалить контакт " + lastName + " " + name + "?")) {
                 return;
             }
@@ -93,7 +93,7 @@ $(function () {
         }
 
         if (confirm("Вы действительно хотите удалить эти контакты? (" + selectedContacts.length + ")")) {
-            selectedContacts.each(function (index) {
+            selectedContacts.each(function () {
                 var contactRow = $("#table-body [type=checkbox]:checked:last").closest("tr");
                 var deleteButton = $(contactRow).find(".delete-button");
 
@@ -109,12 +109,19 @@ $(function () {
     });
 
     $(".search-field").keyup(function () {
-        var searchingText = $(".search-field").val();
-        $("#table-body tr:not(:contains('" + searchingText + "'))").addClass("hide");
+        var searchingText = $(".search-field").val().toLowerCase();
 
-        var filteredContacts = $("#table-body tr:contains('" + searchingText + "')").removeClass("hide");
+        $("#table-body tr").each(function () {
+            $(this).addClass("hide");
+        });
 
-        $(".contacts-count").text("Найдено контактов: " + filteredContacts.length).toggleClass("hide", searchingText === "");
+        $("#table-body td:not(.contact-id)").each(function () {
+            var string = $(this).text().toLowerCase();
+
+            if (string.indexOf(searchingText) >= 0) {
+                $(this).parent().removeClass("hide");
+            }
+        });
 
         checkVisible();
     });
@@ -135,13 +142,13 @@ $(function () {
                 color = 1;
             }
 
-            $(attributeName).attr("placeholder", "Заполните поле");
+            $(attributeName).prop("placeholder", "Заполните поле");
         }, 200);
 
         setTimeout(function () {
             clearInterval(blinking);
             $(attributeName).css("background-color", "#202125");
-            $(attributeName).attr("placeholder", placeholderText);
+            $(attributeName).prop("placeholder", placeholderText);
         }, 4000);
     }
 
