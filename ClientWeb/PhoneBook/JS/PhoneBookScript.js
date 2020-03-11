@@ -49,9 +49,9 @@ $(function () {
 
         var bodyColumn1 = $("<td></td>");
         var bodyColumn2 = $("<td class='contact-id'></td>").text(contactNumber);
-        var bodyColumn3 = $("<td class='last-name'></td>").text(lastName);
-        var bodyColumn4 = $("<td class='name'/td>").text(name);
-        var bodyColumn5 = $("<td class='phone'></td>").text(phoneNumber);
+        var bodyColumn3 = $("<td></td>").text(lastName);
+        var bodyColumn4 = $("<td></td>").text(name);
+        var bodyColumn5 = $("<td></td>").text(phoneNumber);
         var bodyColumn6 = $("<td></td>");
 
         var deleteButton = $("<button type='button' title='Удалить контакт'>╳</button>").addClass("delete-button");
