@@ -16,7 +16,7 @@ $(function () {
             .append("<button class='btn btn-outline-secondary edit-button' title='Edit' type='button'><img alt='Редактировать' src='edit.png'/></button>");
 
         newTask.children(".task").text(todoText.val());
-        
+
         $(".tasks").append(newTask);
 
         todoText.val("");
@@ -44,26 +44,25 @@ $(function () {
 
             var editField = $("<input type='text' class='form-control task editable-task'>");
             editField.val(oldText);
-            newTask.children("button:last").before(editField);            
+            newTask.children("button:last").before(editField);
             editField.focus();
 
             editField.focusout(function () {
                 if (confirm("Сохранить изменения?")) {
                     if (editField.val() === "") {
-                        blink(editField, "editable-task-light");                        
+                        blink(editField, "editable-task-light");
                         return;
                     }
 
                     editableText.text(editField.val());
 
                     finishEditing();
-                }
-                else {
+                } else {
                     editableText.text(oldText);
 
                     finishEditing();
                 }
-            });                               
+            });
 
             function finishEditing() {
                 editField.remove();

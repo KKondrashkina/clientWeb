@@ -1,0 +1,120 @@
+﻿.all {
+    height: 100vh;
+    background-color: #565964;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.title {
+    padding: 10px 15px;    
+}
+
+    .title span {
+        color: #6a737c;
+        font-weight:700;
+        font-size: 1.3rem;
+    }
+
+.tasks {
+    height: calc(100% - 114px);
+    border-radius: 20px;
+    margin: 10px 0;
+    padding: 15px;
+    overflow: auto;
+}
+
+    .new-task, .title, .tasks button, .tasks label, .tasks div.task, .tasks .input-group:not([editable="editable"]) > .form-control:not(:first-child),
+    .tasks .input-group:not([editable="editable"]) > .form-control:not(:last-child) {
+        border-radius: 1.5em;
+    }
+
+    .tasks button, .tasks label {
+        width: 40px;
+        height: 40px;
+    }
+
+@media screen and (max-width: 768px) {
+    .tasks button, .tasks label {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+    }
+
+    .tasks .btn {
+        padding: 0;
+    }
+
+    .tasks .done-button {
+        padding-top: 5px;
+    }
+}
+
+.tasks .input-group div, .tasks .input-group input, .tasks .input-group button:not(:last-child) {
+    margin-right: 5px;
+}
+
+.new-task, .task {
+    background-color: #32343a;
+    color: #8b97a3;
+    border: none;
+    height: auto;
+}
+
+.new-task, .add-button, .title, .tasks, .input-field {
+    background-color: #202125;
+}
+
+    .new-task:focus, .task:focus {
+        background-color: #32343a;
+        color: #8b97a3;
+        box-shadow: 0 0 0 0.2rem rgba(171, 177, 200, 0.25);
+    }
+
+.task:focus {
+    background-color: #4f525c;
+}
+
+.add-button {
+    border: none;
+    border-left: 1px dotted #424347;
+    border-radius: 1.5em;
+}
+
+    .add-button:focus {
+        box-shadow: none;
+    }
+
+    .add-button:hover {
+        background-color: #3f4149;
+    }
+
+.edit-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.edit-button {
+    border: none;
+}
+
+    .edit-button:hover {
+        background-color: #8c98a4;
+    }
+
+.editable-task {
+    background-color: #4f525c;
+}
+
+.editableTaskLight, .todoTextLight {
+    background-color: #767a87;
+}
+
+.tasks .btn-secondary:not(:disabled):not(.disabled).active {
+    background-color: #474c52;
+}
+
+.done {
+    color: #5c646c;
+    text-decoration: line-through;
+    background-color: #28292f;
+}
