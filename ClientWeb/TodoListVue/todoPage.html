@@ -14,11 +14,11 @@
         </div>
 
         <div class="container tasks">
-            <todo-item v-for="item in items" :key="item.id" v-on:save-changes="saveChanges" v-on:delete-todo="deleteTodo" v-on:edit-todo="editTodo" :item="item"></todo-item>
+            <todo-item v-for="item in items" :key="item.id" @save-changes="saveChanges" @delete-todo="deleteTodo" @edit-todo="editTodo" :item="item"></todo-item>
         </div>
 
         <div class="input-group mb-3">
-            <input v-model="todoText" :class="{todoTextLight: isInvalid}" type="text" class="form-control new-task" placeholder="Task" aria-describedby="button-addon2">
+            <input v-model="todoText" :class="{'todo-text-light': isInvalid}" type="text" class="form-control new-task" placeholder="Task" aria-describedby="button-addon2">
             <div class="input-group-append">
                 <button @click="addTodo" class="btn btn-outline-secondary add-button" title="Add" type="button">ᐅ</button>
             </div>
@@ -26,19 +26,19 @@
     </div>
 
     <script type="text/x-template" id="todo-item-template">
-        <div class='input-group mb-3'>
+        <div class="input-group mb-3">
             <div v-if="!isEditing" class="btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary done-button" title="Done"><input @change="done" type="checkbox" autocomplete="off">✓</label>
             </div>
-            <template v-if="!isEditing">
-                <button @click="remove" class="btn btn-outline-secondary delete-button" title="Delete" type="button">╳</button>
-                <div v-text="item.text" :class="{done: isChecked}" class="form-control task"></div>
-                <button @click="edit" class="btn btn-outline-secondary edit-button" title="Edit" type="button"><img alt="Редактировать" src="edit.png" /></button>
-            </template>
-            <template v-else>
+            <template v-if="isEditing">
                 <button @click="save" class="btn btn-outline-secondary edit-button" title="Save" type="button">✓</button>
                 <button @click="cancelEditig" class="btn btn-outline-secondary edit-button" title="Cancel" type="button">╳</button>
                 <input v-model="item.newText" type="text" class="form-control task editable-task">
+            </template>
+            <template v-else>
+                <button @click="remove" class="btn btn-outline-secondary delete-button" title="Delete" type="button">╳</button>
+                <div v-text="item.text" :class="{done: isChecked}" class="form-control task"></div>
+                <button @click="edit" class="btn btn-outline-secondary edit-button" title="Edit" type="button"><img alt="Редактировать" src="edit.png" /></button>
             </template>
         </div>
     </script>

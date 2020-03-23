@@ -1,4 +1,4 @@
-﻿var vm = new Vue({
+﻿new Vue({
     el: ".all",
     data: {
         items: [],
@@ -9,14 +9,7 @@
     methods: {
         addTodo: function () {
             if (this.todoText === "") {
-                var blinking = setInterval(function () {
-                    vm.isInvalid = !vm.isInvalid;
-                }, 200);
-
-                setTimeout(function () {
-                    clearInterval(blinking);
-                    vm.isInvalid = false;
-                }, 2000);
+                this.blink(this);
 
                 return;
             }
@@ -43,12 +36,27 @@
             }
 
             item.text = item.newText;
+        },
+        blink: function (property) {
+            var blinking = setInterval(function () {
+                property.isInvalid = !property.isInvalid;
+            }, 200);
+
+            setTimeout(function () {
+                clearInterval(blinking);
+                property.isInvalid = false;
+            }, 2000);
         }
     }
 });
 
 Vue.component("todo-item", {
-    props: ["item"],
+    props: {
+        item: {
+            type: Object,
+            required: true
+        }
+    },
     data: function () {
         return {
             isEditing: false,

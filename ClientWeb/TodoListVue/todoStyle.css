@@ -6,35 +6,42 @@
 }
 
 .title {
-    padding: 10px 15px;    
+    padding: 5px 15px;
 }
 
     .title span {
-        color: #6a737c;
-        font-weight:700;
-        font-size: 1.3rem;
+        color: #202125;
+        font-weight: 700;
+        font-size: 1.6rem;
     }
 
 .tasks {
-    height: calc(100% - 114px);
+    height: calc(100% - 112px);
     border-radius: 20px;
     margin: 10px 0;
     padding: 15px;
     overflow: auto;
 }
 
-    .new-task, .title, .tasks button, .tasks label, .tasks div.task, .tasks .input-group:not([editable="editable"]) > .form-control:not(:first-child),
+    .new-task,
+    .title,
+    .tasks button,
+    .tasks label,
+    .tasks div.task,
+    .tasks .input-group:not([editable="editable"]) > .form-control:not(:first-child),
     .tasks .input-group:not([editable="editable"]) > .form-control:not(:last-child) {
         border-radius: 1.5em;
     }
 
-    .tasks button, .tasks label {
+    .tasks button,
+    .tasks label {
         width: 40px;
         height: 40px;
     }
 
 @media screen and (max-width: 768px) {
-    .tasks button, .tasks label {
+    .tasks button,
+    .tasks label {
         width: 30px;
         height: 30px;
         font-size: 0.75rem;
@@ -49,22 +56,30 @@
     }
 }
 
-.tasks .input-group div, .tasks .input-group input, .tasks .input-group button:not(:last-child) {
+.tasks .input-group div,
+.tasks .input-group input,
+.tasks .input-group button:not(:last-child) {
     margin-right: 5px;
 }
 
-.new-task, .task {
+.new-task,
+.task {
     background-color: #32343a;
     color: #8b97a3;
     border: none;
     height: auto;
+    padding-top: 7.5px;
 }
 
-.new-task, .add-button, .title, .tasks, .input-field {
+.new-task,
+.add-button,
+.tasks,
+.input-field {
     background-color: #202125;
 }
 
-    .new-task:focus, .task:focus {
+    .new-task:focus,
+    .task:focus {
         background-color: #32343a;
         color: #8b97a3;
         box-shadow: 0 0 0 0.2rem rgba(171, 177, 200, 0.25);
@@ -103,9 +118,11 @@
 
 .editable-task {
     background-color: #4f525c;
+    padding-top: 6px;
 }
 
-.editableTaskLight, .todoTextLight {
+.editable-task-light,
+.todo-text-light {
     background-color: #767a87;
 }
 
