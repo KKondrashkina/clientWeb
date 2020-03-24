@@ -35,7 +35,7 @@
                     <label class="custom-control-label" :for="item.id"></label>
                 </div>
             </td>
-            <td v-text="item.id" class="contact-id"></td>
+            <td v-text="item.number" class="contact-id"></td>
             <td v-text="item.lastName"></td>
             <td v-text="item.name"></td>
             <td v-text="item.phoneNumber"></td>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" type="button" @click="addContact">Add contact</button>
+                <button class="btn btn-primary mb-3" type="button" @click="addContact">Add contact</button>
             </form>
         </div>
     </script>
@@ -126,8 +126,8 @@
         <nav class="navbar navbar-dark sticky-top bg-dark">
             <a class="navbar-brand">Phone-book</a>
             <form class="form-inline">
-                <input @keyup="search" v-model:value="searchText" class="form-control mr-sm-2" placeholder="Search">
-                <button @click="cancel" class="btn btn-outline-secondary my-2 my-sm-0 ml-1" title="Cancel" type="button">Cancel</button>
+                <input @keyup="search" v-model:value="searchText" class="form-control mr-sm-2 mr-1" placeholder="Search">
+                <button @click="cancel" class="btn btn-outline-secondary my-2 my-sm-0" title="Cancel" type="button">Cancel</button>
             </form>
         </nav>
     </script>

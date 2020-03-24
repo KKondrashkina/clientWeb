@@ -1,5 +1,10 @@
 ﻿Vue.component("contact", {
-    props: ["item"],
+    props: {
+        item: {
+            type: Object,
+            required: true
+        }
+    },
     template: "#contact-template",
     methods: {
         remove: function () {
@@ -12,11 +17,16 @@
 });
 
 Vue.component("phone-book-table", {
-    props: ["contacts"],
+    props: {
+        contacts: {
+            type: Array,
+            required: true
+        }
+    },
     data: function () {
         return {
             isAllChecked: false
-        }
+        };
     },
     template: "#phone-book-table-template",
     methods: {
@@ -47,7 +57,7 @@ Vue.component("add-delete-form", {
             isInvalidLastName: false,
             isInvalidName: false,
             isInvalidPhoneNumber: false,
-        }
+        };
     },
     template: "#add-delete-form-template",
     methods: {
@@ -85,7 +95,7 @@ Vue.component("navbar", {
         return {
             isVisibleText: false,
             searchText: ""
-        }
+        };
     },
     template: "#navbar-template",
     methods: {
@@ -104,8 +114,9 @@ Vue.component("navbar", {
 Vue.component("phone-book", {
     data: function () {
         return {
-            contacts: []
-        }
+            contacts: [],
+            itemId: 0
+        };
     },
     template: "#phone-book-template",
     methods: {
@@ -120,7 +131,6 @@ Vue.component("phone-book", {
                     }
 
                     isExist = true;
-                    return;
                 }
             });
 
@@ -129,7 +139,8 @@ Vue.component("phone-book", {
             }
 
             this.contacts.push({
-                id: this.contacts.length + 1,
+                id: this.itemId++,
+                number: this.contacts.length + 1,
                 name: item.name,
                 lastName: item.lastName,
                 phoneNumber: item.phoneNumber,
@@ -147,21 +158,26 @@ Vue.component("phone-book", {
             });
 
             this.contacts.forEach(function (contact, i) {
-                if (i >= item.id - 1) {
-                    contact.id = i + 1;
+                if (i >= item.number - 1) {
+                    contact.number = i + 1;
                 }
 
                 i++;
             });
         },
         deleteItems: function () {
-            var checkedContactsCount = 0;
-
-            this.contacts.forEach(function (contact) {
-                if (contact.isChecked) {
-                    checkedContactsCount++;
+            var checkedContactsCount = this.contacts.reduce(function (sum, current) {
+                if (current.isChecked) {
+                    return sum + 1;
                 }
-            });
+
+                return sum;
+            }, 0);
+
+            if (checkedContactsCount === 0) {
+                alert("No contacts selected.");
+                return;
+            }
 
             if (!confirm("Are you sure you want to delete " + checkedContactsCount + " contacts?")) {
                 return;
@@ -172,7 +188,7 @@ Vue.component("phone-book", {
             });
 
             this.contacts.forEach(function (contact, i) {
-                contact.id = i + 1;
+                contact.number = i + 1;
                 i++;
             });
         },
@@ -188,7 +204,11 @@ Vue.component("phone-book", {
         },
         searchItems: function (text) {
             this.contacts.forEach(function (contact) {
-                contact.isVisible = contact.lastName.indexOf(text) >= 0 || contact.name.indexOf(text) >= 0 || contact.phoneNumber.indexOf(text) >= 0;
+                var textInLowerCase = text.toLowerCase();
+
+                contact.isVisible = (contact.lastName).toLowerCase().indexOf(textInLowerCase) >= 0 ||
+                    (contact.name).toLowerCase().indexOf(textInLowerCase) >= 0 ||
+                    (contact.phoneNumber).toLowerCase().indexOf(textInLowerCase) >= 0;
 
                 if (contact.isChecked && !contact.isVisible) {
                     contact.isChecked = false;
