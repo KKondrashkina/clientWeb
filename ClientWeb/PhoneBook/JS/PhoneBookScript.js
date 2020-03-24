@@ -111,9 +111,7 @@ $(function () {
     $(".search-field").keyup(function () {
         var searchingText = $(".search-field").val().toLowerCase();
 
-        $("#table-body tr").each(function () {
-            $(this).addClass("hide");
-        });
+        $("#table-body tr").addClass("hide");        
 
         $("#table-body td:not(.contact-id)").each(function () {
             var string = $(this).text().toLowerCase();

@@ -9,7 +9,7 @@
     methods: {
         addTodo: function () {
             if (this.todoText === "") {
-                this.blink(this);
+                this.blink();
 
                 return;
             }
@@ -37,14 +37,16 @@
 
             item.text = item.newText;
         },
-        blink: function (property) {
+        blink: function () {
+            var self = this;
+
             var blinking = setInterval(function () {
-                property.isInvalid = !property.isInvalid;
+                self.isInvalid = !self.isInvalid;
             }, 200);
 
             setTimeout(function () {
                 clearInterval(blinking);
-                property.isInvalid = false;
+                self.isInvalid = false;
             }, 2000);
         }
     }
@@ -62,7 +64,7 @@ Vue.component("todo-item", {
             isEditing: false,
             isChecked: false,
             newText: ""
-        }
+        };
     },
     template: "#todo-item-template",
     methods: {
@@ -80,7 +82,7 @@ Vue.component("todo-item", {
             this.$emit("save-changes", this.item);
             this.isEditing = false;
         },
-        cancelEditig: function () {
+        cancelEditing: function () {
             this.isEditing = false;
         }
     }

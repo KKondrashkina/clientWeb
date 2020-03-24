@@ -32,7 +32,7 @@
             </div>
             <template v-if="isEditing">
                 <button @click="save" class="btn btn-outline-secondary edit-button" title="Save" type="button">✓</button>
-                <button @click="cancelEditig" class="btn btn-outline-secondary edit-button" title="Cancel" type="button">╳</button>
+                <button @click="cancelEditing" class="btn btn-outline-secondary edit-button" title="Cancel" type="button">╳</button>
                 <input v-model="item.newText" type="text" class="form-control task editable-task">
             </template>
             <template v-else>
