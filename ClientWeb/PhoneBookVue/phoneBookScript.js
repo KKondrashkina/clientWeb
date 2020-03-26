@@ -166,13 +166,9 @@ Vue.component("phone-book", {
             });
         },
         deleteItems: function () {
-            var checkedContactsCount = this.contacts.reduce(function (sum, current) {
-                if (current.isChecked) {
-                    return sum + 1;
-                }
-
-                return sum;
-            }, 0);
+            var checkedContactsCount = this.contacts.filter(function (e) {
+                return e.isChecked;
+            }, 0).length;
 
             if (checkedContactsCount === 0) {
                 alert("No contacts selected.");

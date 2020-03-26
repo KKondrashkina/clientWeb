@@ -26,7 +26,8 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
+[Bb]in/**
+![Bb]in/www
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
@@ -346,3 +347,17 @@ healthchecksdb
 /ClientWeb/TodoListVue/JavaScript.js
 /ClientWeb/PhoneBookVue/HtmlPage1.html
 /ClientWeb/PhoneBookVue/JavaScript.js
+/ClientWeb/CSSForm/bin
+/ClientWeb/CSSTable/bin
+/ClientWeb/Gabriel/bin
+/ClientWeb/CSSText/bin
+/ClientWeb/PhoneBook/bin
+/ClientWeb/PhoneBookVue/bin
+/ClientWeb/TemperatureConverter/bin
+/ClientWeb/ToDoList/bin
+/ClientWeb/TodoListVue/bin
+/ClientWeb/UnderscoreProject/bin
+/ClientWeb/TodoListJQuery/bin
+/ClientWeb/WorkWithArrays/bin
+/ClientWeb/WorkWithObjecs/bin
+/ClientWeb/TodoListBootstrap/bin

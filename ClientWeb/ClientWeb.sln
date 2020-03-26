@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListVue", "TodoListVue\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookVue", "PhoneBookVue\PhoneBookVue.csproj", "{837FDD29-D717-4FB6-A6DF-3657019C37C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookServer", "PhoneBookServer\PhoneBookServer.csproj", "{8D453C6E-2FB0-48AE-AF00-19CE45C5022A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{837FDD29-D717-4FB6-A6DF-3657019C37C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{837FDD29-D717-4FB6-A6DF-3657019C37C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{837FDD29-D717-4FB6-A6DF-3657019C37C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D453C6E-2FB0-48AE-AF00-19CE45C5022A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D453C6E-2FB0-48AE-AF00-19CE45C5022A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D453C6E-2FB0-48AE-AF00-19CE45C5022A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D453C6E-2FB0-48AE-AF00-19CE45C5022A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
