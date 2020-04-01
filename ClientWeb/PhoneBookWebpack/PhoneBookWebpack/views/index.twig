@@ -1,7 +1,7 @@
 ﻿{% extends 'layout.twig' %}
 
 {% block body %}
-<div id="app" v-cloak>
+	 <div id="app" v-cloak>
     <phone-book></phone-book>
 </div>
 
@@ -10,11 +10,11 @@
         <navbar @search-contacts="getItems"></navbar>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <add-delete-form @add-contact="addItem" @delete-contacts="deleteItems" :isExist="isExist"></add-delete-form>
+                <div class="col-md-2">
+                    <add-delete-form @add-contact="addItem" @delete-contacts="deleteItems"></add-delete-form>
                 </div>
 
-                <div class="col-lg-10">
+                <div class="col-md-10">
                     <phone-book-table @delete-item="deleteItem" @check-item="checkItem" @check-all="checkItems" :contacts="contacts"></phone-book-table>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <label class="custom-control-label" :for="item.id"></label>
             </div>
         </td>
-        <td v-text="index + 1" class="contact-id"></td>
+        <td v-text="item.number" class="contact-id"></td>
         <td v-text="item.lastName"></td>
         <td v-text="item.name"></td>
         <td v-text="item.phoneNumber"></td>
@@ -59,7 +59,7 @@
         </thead>
 
         <tbody>
-            <contact v-if="item.isVisible" v-for="(item, index) in contacts" @delete-contact="deleteContact" @check-contact="checkContact" :key="item.id" :index="index" :item="item"></contact>
+            <contact v-if="item.isVisible" v-for="item in contacts" @delete-contact="deleteContact" @check-contact="checkContact" :key="item.id" :item="item"></contact>
         </tbody>
     </table>
 </script>

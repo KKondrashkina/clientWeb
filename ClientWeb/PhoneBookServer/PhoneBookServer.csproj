@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="phoneBookExpress\app.js" />
     <Content Include="phoneBookExpress\public\js\phoneBookScript.js" />
+    <Content Include="phoneBookExpress\public\libs\bootbox.min.js" />
     <Content Include="phoneBookExpress\public\libs\bootstrap.bundle.min.js" />
     <Content Include="phoneBookExpress\public\libs\bootstrap.min.css" />
     <Content Include="phoneBookExpress\public\libs\jquery.min.js" />
