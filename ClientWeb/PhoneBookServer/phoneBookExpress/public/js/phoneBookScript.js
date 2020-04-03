@@ -185,7 +185,7 @@ Vue.component("phone-book", {
                         lastName: c.lastName,
                         phoneNumber: c.phoneNumber,
                         id: c.id,
-                        isChecked: (self.checkedContactsId).includes(c.id) || false
+                        isChecked: (self.checkedContactsId).includes(c.id)
                     };
                 });
             });
