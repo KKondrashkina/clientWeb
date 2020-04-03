@@ -29,7 +29,7 @@
             return {
                 contacts: [],
                 isExist: true,
-                checkedContactsId: []
+                checkedContactsIds: []
             };
         },
         components: {
@@ -49,7 +49,7 @@
                             lastName: c.lastName,
                             phoneNumber: c.phoneNumber,
                             id: c.id,
-                            isChecked: (this.checkedContactsId).includes(c.id)
+                            isChecked: this.checkedContactsIds.indexOf(c.id) >= 0
                         };
                     });
                 });
@@ -117,21 +117,21 @@
                     c.isChecked = isAllChecked;
                 });
 
-                this.checkedContactsId = [];
+                this.checkedContactsIds = [];
 
                 if (isAllChecked)
-                    this.contacts.forEach(c => {
-                        this.checkedContactsId.push(c.id);
-                    });
+                    this.checkedContactsIds = this.contacts.map(function (c) {
+                    return c.id;
+                });
             },
             checkItem(item) {
                 item.isChecked = !item.isChecked;
 
                 if (item.isChecked) {
-                    this.checkedContactsId.push(item.id);
+                    this.checkedContactsIds.push(item.id);
                 } else {
-                    this.checkedContactsId = this.checkedContactsId.filter(c => {
-                        return c.id !== item.id;
+                    this.checkedContactsIds = this.checkedContactsIds.filter(c => {
+                        return c !== item.id;
                     });
                 }
             }

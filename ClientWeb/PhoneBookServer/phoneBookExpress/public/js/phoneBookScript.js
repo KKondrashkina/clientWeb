@@ -167,7 +167,7 @@ Vue.component("phone-book", {
             service: new PhoneBookService(),
             contacts: [],
             isExist: true,
-            checkedContactsId: []
+            checkedContactsIds: []
         };
     },
     template: "#phone-book-template",
@@ -185,7 +185,7 @@ Vue.component("phone-book", {
                         lastName: c.lastName,
                         phoneNumber: c.phoneNumber,
                         id: c.id,
-                        isChecked: (self.checkedContactsId).includes(c.id)
+                        isChecked: self.checkedContactsIds.indexOf(c.id) >= 0
                     };
                 });
             });
@@ -263,21 +263,21 @@ Vue.component("phone-book", {
             });
 
             var self = this;
-            this.checkedContactsId = [];
+            this.checkedContactsIds = [];
 
             if (isAllChecked) {
-                this.contacts.forEach(function (c) {
-                    self.checkedContactsId.push(c.id);
+                this.checkedContactsIds = this.contacts.map(function (c) {
+                    return c.id;
                 });
             }
         },
         checkItem: function (item) {
             item.isChecked = !item.isChecked;
             if (item.isChecked) {
-                this.checkedContactsId.push(item.id);
+                this.checkedContactsIds.push(item.id);
             } else {
-                this.checkedContactsId = this.checkedContactsId.filter(function (c) {
-                    return c.id !== item.id;
+                this.checkedContactsIds = this.checkedContactsIds.filter(function (c) {
+                    return c !== item.id;
                 });
             }
         }
