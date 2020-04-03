@@ -10,8 +10,8 @@
         <navbar @search-contacts="getItems"></navbar>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 col-sm-3 col-lg-2">
-                    <add-delete-form @add-contact="addItem" @delete-contacts="deleteItems" :isExist="isExist"></add-delete-form>
+                <div class="col-6 col-sm-3 col-lg-2">
+                    <add-delete-form @add-contact="addItem" @delete-contacts="deleteItems" :is-exist="isExist"></add-delete-form>
                 </div>
 
                 <div class="col-lg-10">
@@ -59,7 +59,7 @@
         </thead>
 
         <tbody>
-            <contact v-if="item.isVisible" v-for="(item, index) in contacts" @delete-contact="deleteContact" @check-contact="checkContact" :key="item.id" :index="index" :item="item"></contact>
+            <contact v-for="(item, index) in contacts" @delete-contact="deleteContact" @check-contact="checkContact" :key="item.id" :index="index" :item="item"></contact>
         </tbody>
     </table>
 </script>

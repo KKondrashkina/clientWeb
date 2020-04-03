@@ -1,6 +1,6 @@
 ﻿function PhoneBookService() {
     this.getContacts = function (term) {
-        return get("/getContacts?term=", term);
+        return get("/getContacts", { term: term });
     };
 
     this.addContact = function (contact) {
@@ -21,7 +21,10 @@ function post(url, data) {
 }
 
 function get(url, data) {
-    return $.get(url + data);
+    return $.get({
+        url: url,
+        data: data
+    });
 }
 
 Vue.component("contact", {
@@ -132,7 +135,6 @@ Vue.component("add-delete-form", {
             this.lastName = "";
             this.name = "";
             this.phoneNumber = "";
-
             this.isExist = true;
         }
     }
@@ -164,7 +166,8 @@ Vue.component("phone-book", {
         return {
             service: new PhoneBookService(),
             contacts: [],
-            isExist: true
+            isExist: true,
+            checkedContactsId: []
         };
     },
     template: "#phone-book-template",
@@ -176,7 +179,15 @@ Vue.component("phone-book", {
             var self = this;
 
             this.service.getContacts(term || "").done(function (contacts) {
-                self.contacts = contacts;
+                self.contacts = contacts.map(function (c) {
+                    return {
+                        name: c.name,
+                        lastName: c.lastName,
+                        phoneNumber: c.phoneNumber,
+                        id: c.id,
+                        isChecked: (self.checkedContactsId).includes(c.id) || false
+                    };
+                });
             });
         },
         addItem: function (item) {
@@ -185,9 +196,7 @@ Vue.component("phone-book", {
             this.service.addContact({
                 name: item.name,
                 lastName: item.lastName,
-                phoneNumber: item.phoneNumber,
-                isChecked: false,
-                isVisible: true
+                phoneNumber: item.phoneNumber
             }).done(function (response) {
                 if (!response.success) {
                     bootbox.alert(response.message);
@@ -220,7 +229,7 @@ Vue.component("phone-book", {
                 }
 
                 self.remove(item);
-            })
+            });
         },
         deleteItems: function () {
             var self = this;
@@ -249,14 +258,28 @@ Vue.component("phone-book", {
             })
         },
         checkItems: function (isAllChecked) {
-            this.contacts.forEach(function (contact) {
-                if (contact.isVisible) {
-                    contact.isChecked = isAllChecked;
-                }
+            this.contacts.forEach(function (c) {
+                c.isChecked = isAllChecked;
             });
+
+            var self = this;
+            this.checkedContactsId = [];
+
+            if (isAllChecked) {
+                this.contacts.forEach(function (c) {
+                    self.checkedContactsId.push(c.id);
+                });
+            }
         },
         checkItem: function (item) {
             item.isChecked = !item.isChecked;
+            if (item.isChecked) {
+                this.checkedContactsId.push(item.id);
+            } else {
+                this.checkedContactsId = this.checkedContactsId.filter(function (c) {
+                    return c.id !== item.id;
+                });
+            }
         }
     }
 });

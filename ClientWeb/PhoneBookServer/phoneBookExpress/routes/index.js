@@ -34,15 +34,7 @@ router.post("/deleteContact", function (req, res) {
 
     contacts = contacts.filter(function (c) {
         return c.id !== id;
-    });
-
-    contacts.forEach(function (c, i) {
-        if (i >= contact.number - 1) {
-            c.number = i + 1;
-        }
-
-        i++;
-    });
+    });   
 
     res.send({
         success: true,
