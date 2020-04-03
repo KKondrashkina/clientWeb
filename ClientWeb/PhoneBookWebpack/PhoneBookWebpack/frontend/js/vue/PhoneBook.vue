@@ -3,7 +3,7 @@
         <navbar @search-contacts="getItems"></navbar>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-6 col-sm-3 col-lg-2">
+                <div class="col-12 col-sm-6 col-lg-2">
                     <add-delete-form @add-contact="addItem" @delete-contacts="deleteItems" :is-exist="isExist"></add-delete-form>
                 </div>
 

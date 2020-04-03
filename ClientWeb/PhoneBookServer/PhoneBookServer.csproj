@@ -73,6 +73,7 @@
     <Content Include="phoneBookExpress\public\libs\bootstrap.bundle.min.js" />
     <Content Include="phoneBookExpress\public\libs\bootstrap.min.css" />
     <Content Include="phoneBookExpress\public\libs\jquery.min.js" />
+    <Content Include="phoneBookExpress\public\libs\underscore-min.js" />
     <Content Include="phoneBookExpress\public\libs\vue.min.js" />
     <Content Include="phoneBookExpress\public\css\style.css" />
     <Content Include="phoneBookExpress\routes\index.js" />
@@ -91,6 +92,7 @@
     <Content Include="phoneBookExpress\public\libs\bootstrap.bundle.min.js.map" />
     <Content Include="phoneBookExpress\public\libs\bootstrap.min.css.map" />
     <Content Include="phoneBookExpress\public\libs\jquery.min.map" />
+    <Content Include="phoneBookExpress\public\libs\underscore-min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

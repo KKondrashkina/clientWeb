@@ -9,6 +9,8 @@
 </template>
 
 <script>
+    import _ from "underscore";
+
     export default {
         data() {
             return {
@@ -18,10 +20,10 @@
         },
         template: "#navbar-template",
         methods: {
-            search() {
+            search: _.debounce(function () {
                 this.isVisibleText = this.searchText !== "";
                 this.$emit("search-contacts", this.term);
-            },
+            }, 500),
             cancel() {
                 this.isVisibleText = false;
                 this.term = "";
