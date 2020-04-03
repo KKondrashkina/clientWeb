@@ -1,13 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var contacts = [];
-var newId = 1;
+let contacts = [];
+let newId = 1;
 
-router.get("/getContacts", function (req, res) {
-    var term = (req.query.term || "").toLowerCase();
+router.get("/getContacts", (req, res) => {
+    const term = (req.query.term || "").toLowerCase();
 
-    var filteredContacts = term.length === 0 ? contacts : contacts.filter(function (c) {
+    const filteredContacts = term.length === 0 ? contacts : contacts.filter(c => {
         return c.name.toLowerCase().indexOf(term) >= 0
             || c.lastName.toLowerCase().indexOf(term) >= 0
             || c.phoneNumber.indexOf(term) >= 0;
@@ -16,10 +16,10 @@ router.get("/getContacts", function (req, res) {
     res.send(filteredContacts);
 });
 
-router.post("/deleteContact", function (req, res) {
-    var id = req.body.request;
+router.post("/deleteContact", (req, res) => {
+    const id = req.body.request;
 
-    var contact = contacts.find(function (c) {
+    const contact = contacts.find(c => {
         return c.id === id;
     });
 
@@ -32,16 +32,8 @@ router.post("/deleteContact", function (req, res) {
         return;
     }
 
-    contacts = contacts.filter(function (c) {
+    contacts = contacts.filter(c => {
         return c.id !== id;
-    });
-
-    contacts.forEach(function (c, i) {
-        if (i >= contact.number - 1) {
-            c.number = i + 1;
-        }
-
-        i++;
     });
 
     res.send({
@@ -50,10 +42,10 @@ router.post("/deleteContact", function (req, res) {
     });
 });
 
-router.post("/addContact", function (req, res) {
-    var contact = req.body.request;
+router.post("/addContact", (req, res) => {
+    const contact = req.body.request;
 
-    var isContactExist = contacts.some(function (c) {
+    const isContactExist = contacts.some(c => {
         return c.phoneNumber.toLowerCase() === contact.phoneNumber.toLowerCase();
     });
 
@@ -78,7 +70,7 @@ router.post("/addContact", function (req, res) {
 });
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
     res.render('index', { title: 'Express' });
 });
 

@@ -1414,6 +1414,11 @@
     <Content Include="PhoneBookWebpack\node_modules\bootstrap\scss\_variables.scss" />
     <Content Include="PhoneBookWebpack\public\script.js.map" />
     <Content Include="PhoneBookWebpack\public\styles.css.map" />
+    <Content Include="PhoneBookWebpack\frontend\js\vue\PhoneBook.vue" />
+    <Content Include="PhoneBookWebpack\frontend\js\vue\Contact.vue" />
+    <Content Include="PhoneBookWebpack\frontend\js\vue\PhoneBookTable.vue" />
+    <Content Include="PhoneBookWebpack\frontend\js\vue\AddDeleteForm.vue" />
+    <Content Include="PhoneBookWebpack\frontend\js\vue\Navbar.vue" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

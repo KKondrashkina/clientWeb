@@ -1,8 +1,8 @@
 ﻿const path = require("path");
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
     devtool: "source-map",
@@ -35,12 +35,28 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
                 use: "file-loader?name=[path][name].[ext]?[hash]"
-            }]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
+            },
+            {
+                test: /\.vue$/,
+                use: "vue-loader"
+            }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "styles.css"
-        })
+        }),
+        new VueLoaderPlugin()
     ]
 };
