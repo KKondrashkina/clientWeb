@@ -20504,9 +20504,7 @@
     <Content Include="todolist\package.json" />
     <Content Include="todolist\README.md" />
     <Content Include="todolist\src\App.vue" />
-    <Content Include="todolist\src\components\HelloWorld.vue" />
-    <Content Include="todolist\src\views\About.vue" />
-    <Content Include="todolist\src\views\Home.vue" />
+    <Content Include="todolist\src\components\Container.vue" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -22327,6 +22325,9 @@
     <TypeScriptCompile Include="todolist\node_modules\yargs\node_modules\p-locate\index.d.ts" />
     <TypeScriptCompile Include="todolist\node_modules\yargs\node_modules\p-try\index.d.ts" />
     <TypeScriptCompile Include="todolist\node_modules\yargs\node_modules\path-exists\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="todolist\src\views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

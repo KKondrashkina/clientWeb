@@ -139,22 +139,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.scss */ "./frontend/css/style.scss");
 /* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _vue_PhoneBook_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./vue/PhoneBook.vue */ "./frontend/js/vue/PhoneBook.vue");
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var _vue_PhoneBook_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./vue/PhoneBook.vue */ "./frontend/js/vue/PhoneBook.vue");
 
 
 
 
 
-
-new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
+new vue__WEBPACK_IMPORTED_MODULE_3__["default"]({
   el: "#app",
   components: {
-    'phone-book': _vue_PhoneBook_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    'phone-book': _vue_PhoneBook_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
@@ -888,9 +885,12 @@ __webpack_require__.r(__webpack_exports__);
         c.isChecked = isAllChecked;
       });
       this.checkedContactsIds = [];
-      if (isAllChecked) this.checkedContactsIds = this.contacts.map(function (c) {
-        return c.id;
-      });
+
+      if (isAllChecked) {
+        this.checkedContactsIds = this.contacts.map(function (c) {
+          return c.id;
+        });
+      }
     },
     checkItem: function checkItem(item) {
       item.isChecked = !item.isChecked;

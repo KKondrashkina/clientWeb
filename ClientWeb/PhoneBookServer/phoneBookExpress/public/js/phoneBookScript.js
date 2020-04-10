@@ -152,7 +152,7 @@ Vue.component("navbar", {
         search: _.debounce(function () {
             this.isVisibleText = this.searchText !== "";
             this.$emit("search-contacts", this.term);
-        },500),
+        }, 500),
         cancel: function () {
             this.isVisibleText = false;
             this.term = "";
@@ -261,7 +261,7 @@ Vue.component("phone-book", {
             this.contacts.forEach(function (c) {
                 c.isChecked = isAllChecked;
             });
-                        
+
             this.checkedContactsIds = [];
 
             if (isAllChecked) {

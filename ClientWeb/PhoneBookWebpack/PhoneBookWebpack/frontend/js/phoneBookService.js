@@ -2,7 +2,7 @@
 
 export default {
     getContacts(term) {
-        return Ajax.get("/getContacts", { term: term });
+        return Ajax.get("/getContacts", { term });
     },
     addContact(contact) {
         return Ajax.post("/addContact", contact);

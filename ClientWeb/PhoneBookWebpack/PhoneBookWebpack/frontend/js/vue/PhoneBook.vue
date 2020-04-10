@@ -43,15 +43,13 @@
         methods: {
             getItems(term) {
                 PhoneBookService.getContacts(term || "").done(contacts => {
-                    this.contacts = contacts.map(c => {
-                        return {
-                            name: c.name,
-                            lastName: c.lastName,
-                            phoneNumber: c.phoneNumber,
-                            id: c.id,
-                            isChecked: this.checkedContactsIds.indexOf(c.id) >= 0
-                        };
-                    });
+                    this.contacts = contacts.map(c => ({
+                        name: c.name,
+                        lastName: c.lastName,
+                        phoneNumber: c.phoneNumber,
+                        id: c.id,
+                        isChecked: this.checkedContactsIds.indexOf(c.id) >= 0
+                    }));
                 });
             },
             addItem(item) {
@@ -89,9 +87,7 @@
                 });
             },
             deleteItems() {
-                const checkedContacts = this.contacts.filter(e => {
-                    return e.isChecked;
-                }, 0);
+                const checkedContacts = this.contacts.filter(e => e.isChecked, 0);
 
                 const checkedContactsCount = checkedContacts.length;
 
@@ -119,10 +115,9 @@
 
                 this.checkedContactsIds = [];
 
-                if (isAllChecked)
-                    this.checkedContactsIds = this.contacts.map(function (c) {
-                    return c.id;
-                });
+                if (isAllChecked) {
+                    this.checkedContactsIds = this.contacts.map(c => c.id);
+                }
             },
             checkItem(item) {
                 item.isChecked = !item.isChecked;
@@ -130,9 +125,7 @@
                 if (item.isChecked) {
                     this.checkedContactsIds.push(item.id);
                 } else {
-                    this.checkedContactsIds = this.checkedContactsIds.filter(c => {
-                        return c !== item.id;
-                    });
+                    this.checkedContactsIds = this.checkedContactsIds.filter(c => c !== item.id);
                 }
             }
         }
