@@ -3,30 +3,30 @@
     <v-navigation-drawer v-model="drawer"
                          app
                          clipped>
-      <v-list dense>
-        <v-list-group value="false">
-          <template v-slot:activator>
+      <v-list>
+        <v-list-item-group>
+          <v-list-item to="/todoLists" @click="$store.commit('checkLists')">
             <v-list-item-action>
               <v-icon>mdi-format-list-checkbox</v-icon>
             </v-list-item-action>
             <v-list-item-title>Todo lists</v-list-item-title>
-          </template>
+          </v-list-item>
 
-          <v-list-item>
-            <v-switch label="Hide completed"></v-switch>
+          <v-switch v-if="isListsChecked"
+                    class="ml-10"
+                    v-model="isHideCompleted"
+                    @change="$store.commit('showOrHide')"
+                    label="Hide completed"></v-switch>
+
+          <v-list-item to="/notes" @click="$store.commit('checkNotes')">
+            <v-list-item-action>
+              <v-icon>mdi-pencil</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Notes</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
-          <v-list-item>
-            <v-switch label="Show only important"></v-switch>
-          </v-list-item>
-        </v-list-group>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-pencil</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Notes</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
 
@@ -37,7 +37,7 @@
     </v-app-bar>
 
     <v-content>
-      <notesAndLists></notesAndLists>
+      <router-view></router-view>
     </v-content>
 
     <v-footer app>
@@ -47,15 +47,18 @@
 </template>
 
 <script>
-import notesAndLists from './NotesAndListsContainer'
-
 export default {
   name: 'container',
   props: {
     source: String
   },
-  components: {
-    notesAndLists
+  computed: {
+    isListsChecked () {
+      return this.$store.state.isListsChecked
+    },
+    isHideCompleted () {
+      return this.$store.state.isHideCompleted
+    }
   },
   data: () => ({
     drawer: null
@@ -64,9 +67,6 @@ export default {
     this.$vuetify.theme.dark = true
   },
   methods: {
-    addList () {
-
-    }
   }
 }
 </script>

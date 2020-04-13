@@ -4,18 +4,23 @@
       <v-dialog v-model="dialog"
                 width="500">
         <template v-slot:activator="{ on }">
-          <v-btn fab dark large color="grey darken-3" v-on="on">
+          <v-btn fab
+                 dark
+                 large
+                 title="Add new"
+                 color="grey darken-3"
+                 v-on="on">
             <v-icon dark>mdi-plus</v-icon>
           </v-btn>
         </template>
-        <nameForm @add-list="addTodoList"></nameForm>
+        <nameForm @add="addNew"></nameForm>
       </v-dialog>
     </div>
-    </v-col>
+  </v-col>
 </template>
 
 <script>
-import nameForm from './TodoListNameForm'
+import nameForm from './NameForm'
 
 export default {
   data () {
@@ -27,8 +32,8 @@ export default {
     nameForm
   },
   methods: {
-    addTodoList (name) {
-      this.$emit('add-todo-list', name)
+    addNew (name) {
+      this.$emit('add-new', name)
       this.dialog = false
     }
   }
