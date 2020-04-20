@@ -1,19 +1,19 @@
 <template>
-  <container></container>
+    <container></container>
 </template>
 
 <script>
-import container from './components/Container'
+import container from "./components/Container";
 
 export default {
-  name: 'App',
+    name: "App",
 
-  components: {
-    container
-  },
+    components: {
+        container
+    },
 
-  data: () => ({
-    //
-  })
-}
+    data: () => ({
+        //
+    })
+};
 </script>

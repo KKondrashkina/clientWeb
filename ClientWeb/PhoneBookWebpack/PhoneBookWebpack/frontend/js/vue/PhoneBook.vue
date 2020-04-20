@@ -87,7 +87,7 @@
                 });
             },
             deleteItems() {
-                const checkedContacts = this.contacts.filter(e => e.isChecked, 0);
+                const checkedContacts = this.contacts.filter(e => e.isChecked);
 
                 const checkedContactsCount = checkedContacts.length;
 
@@ -109,9 +109,7 @@
                 });
             },
             checkItems(isAllChecked) {
-                this.contacts.forEach(c => {
-                    c.isChecked = isAllChecked;
-                });
+                this.contacts.forEach(c => (c.isChecked = isAllChecked));
 
                 this.checkedContactsIds = [];
 
