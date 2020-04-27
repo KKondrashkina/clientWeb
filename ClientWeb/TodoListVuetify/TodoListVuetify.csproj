@@ -13579,6 +13579,7 @@
     <Content Include="todolist\src\components\notes\NotesContainer.vue" />
     <Content Include="todolist\src\components\notes\Note.vue" />
     <Content Include="todolist\src\components\notes\OpenedNote.vue" />
+    <Content Include="todolist\src\components\notes\NoteForm.vue" />
     <None Include="todolist\src\components\todoLists\OpenedTodoList.vue" />
     <Content Include="todolist\src\main.js" />
     <Content Include="todolist\src\router\index.js" />
@@ -20511,7 +20512,7 @@
     <Content Include="todolist\src\components\Container.vue" />
     <Content Include="todolist\src\components\todoLists\TodoList.vue" />
     <Content Include="todolist\src\components\todoLists\Task.vue" />
-    <Content Include="todolist\src\components\NameForm.vue" />
+    <Content Include="todolist\src\components\todoLists\ListForm.vue" />
     <Content Include="todolist\src\components\NameDialog.vue" />
     <Content Include="todolist\src\components\todoLists\TodoListsContainer.vue" />
     <None Include="Web.Debug.config">

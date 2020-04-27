@@ -1,6 +1,8 @@
 ﻿<template>
     <v-card>
-        <v-form v-model="valid">
+        <v-form v-model="valid"
+                ref="form"
+                onsubmit="return false;">
             <v-container>
                 <v-row align="center">
                     <v-col cols="12"
@@ -9,7 +11,9 @@
                                     :rules="nameRules"
                                     :counter="20"
                                     label="Enter the name"
-                                    required></v-text-field>
+                                    required
+                                    @blur="restValdation"
+                                    @keypress.enter="add"></v-text-field>
                     </v-col>
 
                     <v-col md="2">
@@ -36,10 +40,16 @@ export default {
     }),
     methods: {
         add() {
+            this.$refs.form.validate();
+
             if (this.valid) {
                 this.$emit("add", this.name);
                 this.name = "";
+                this.$refs.form.resetValidation();
             }
+        },
+        restValdation() {
+            this.$refs.form.resetValidation();
         }
     }
 };

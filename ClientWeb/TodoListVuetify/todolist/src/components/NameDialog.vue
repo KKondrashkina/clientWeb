@@ -1,5 +1,5 @@
 ﻿<template>
-    <v-col cols="1">
+    <v-col cols="12" md="1">
         <div class="text-center">
             <v-dialog v-model="dialog"
                       width="500">
@@ -10,17 +10,19 @@
                            title="Add new"
                            color="grey darken-3"
                            v-on="on">
-                      <v-icon dark>mdi-plus</v-icon>
+                         <v-icon dark>mdi-plus</v-icon>
                     </v-btn>
                 </template>
-                <nameForm @add="addNew"></nameForm>
+                <listForm v-if="isListsChecked" @add="addNew"></listForm>
+                <noteForm v-else @add="addNew"></noteForm>
             </v-dialog>
         </div>
     </v-col>
 </template>
 
 <script>
-import nameForm from "./NameForm";
+import listForm from "./todoLists/ListForm";
+import noteForm from "./notes/NoteForm";
 
 export default {
     data() {
@@ -28,12 +30,18 @@ export default {
             dialog: false
         };
     },
+    computed: {
+        isListsChecked() {
+            return this.$store.state.isListsChecked;
+        }
+    },
     components: {
-        nameForm
+        listForm,
+        noteForm
     },
     methods: {
-        addNew(name) {
-            this.$emit("add-new", name);
+        addNew(name, text) {
+            this.$emit("add-new", name, text);
             this.dialog = false;
         }
     }

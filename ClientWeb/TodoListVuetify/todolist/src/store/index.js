@@ -24,8 +24,10 @@ export default new Vuex.Store({
             state.isListsChecked = false;
         },
         addNewList(state, name) {
+            state.listId++;
+
             state.todoLists.push({
-                id: state.listId++,
+                id: state.listId,
                 name: name,
                 tasks: []
             });
@@ -35,11 +37,13 @@ export default new Vuex.Store({
                 return l.id !== item.id;
             });
         },
-        addNewNote(state, name) {
+        addNewNote(state, info) {
+            state.noteId++;
+
             state.notes.push({
-                id: state.noteId++,
-                name: name,
-                text: ""
+                id: state.noteId,
+                name: info.name,
+                text: info.text
             });
         },
         deleteNote(state, item) {

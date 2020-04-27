@@ -1,22 +1,22 @@
 ﻿<template>
-  <v-row v-if="!isListsChecked"
-         align="center"
-         class="pa-5">
-    <template v-if="!isShowNote">
-      <note v-for="item in notes"
-            :key="item.id"
-            :item="item"
-            @delete-note="deleteNote"
-            @open-note="openNote">
-      </note>
-      <nameDialog @add-new="addNewNote"></nameDialog>
-    </template>
+    <v-row v-if="!isListsChecked"
+           align="center"
+           class="pa-5">
+        <template v-if="!isShowNote">
+            <note v-for="item in notes"
+                  :key="item.id"
+                  :item="item"
+                  @delete-note="deleteNote"
+                  @open-note="openNote">
+            </note>
+            <nameDialog @add-new="addNewNote"></nameDialog>
+        </template>
 
-    <template v-else>
-      <openedNote @show-notes="showNotes"
-                  :item="openedNote"></openedNote>
-    </template>
-  </v-row>
+        <template v-else>
+            <openedNote @show-notes="showNotes"
+                        :item="openedNote"></openedNote>
+        </template>
+    </v-row>
 </template>
 
 <script>
@@ -45,8 +45,8 @@ export default {
         openedNote
     },
     methods: {
-        addNewNote(name) {
-            this.$store.commit("addNewNote", name);
+        addNewNote(name, text) {
+            this.$store.commit("addNewNote", { name, text });
         },
         deleteNote(item) {
             this.$store.commit("deleteNote", item);
