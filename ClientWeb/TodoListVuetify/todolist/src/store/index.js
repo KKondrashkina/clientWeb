@@ -33,9 +33,7 @@ export default new Vuex.Store({
             });
         },
         deleteList(state, item) {
-            state.todoLists = state.todoLists.filter(l => {
-                return l.id !== item.id;
-            });
+            state.todoLists = state.todoLists.filter(t => t.id !== item.id);
         },
         addNewNote(state, info) {
             state.noteId++;
@@ -47,9 +45,7 @@ export default new Vuex.Store({
             });
         },
         deleteNote(state, item) {
-            state.notes = state.notes.filter(n => {
-                return n.id !== item.id;
-            });
+            state.notes = state.notes.filter(n => n.id !== item.id);
         }
     },
     actions: {

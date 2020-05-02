@@ -13,8 +13,8 @@
                          <v-icon dark>mdi-plus</v-icon>
                     </v-btn>
                 </template>
-                <listForm v-if="isListsChecked" @add="addNew"></listForm>
-                <noteForm v-else @add="addNew"></noteForm>
+                <list-form v-if="isListsChecked" @add="addNew"></list-form>
+                <note-form v-else @add="addNew"></note-form>
             </v-dialog>
         </div>
     </v-col>
@@ -36,8 +36,8 @@ export default {
         }
     },
     components: {
-        listForm,
-        noteForm
+        "list-form": listForm,
+        "note-form": noteForm
     },
     methods: {
         addNew(name, text) {

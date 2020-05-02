@@ -3,19 +3,19 @@
            align="center"
            class="pa-5">
         <template v-if="!isShowList">
-            <todoList v-for="item in todoLists"
+            <todo-list v-for="item in todoLists"
                       :key="item.id"
                       :item="item"
                       @delete-list="deleteList"
                       @open-list="openList">
-            </todoList>
-            <nameDialog @add-new="addNewList"></nameDialog>
+            </todo-list>
+            <name-dialog @add-new="addNewList"></name-dialog>
         </template>
 
         <template v-else>
-            <openedTodoList @show-lists="showLists"
+            <opened-todo-list @show-lists="showLists"
                             :item="openedList">
-            </openedTodoList>
+            </opened-todo-list>
         </template>
     </v-row>
 </template>
@@ -41,9 +41,9 @@ export default {
         }
     },
     components: {
-        nameDialog,
-        todoList,
-        openedTodoList
+        "name-dialog": nameDialog,
+        "todo-list": todoList,
+        "opened-todo-list": openedTodoList
     },
     methods: {
         addNewList(name) {

@@ -9,12 +9,12 @@
                   @delete-note="deleteNote"
                   @open-note="openNote">
             </note>
-            <nameDialog @add-new="addNewNote"></nameDialog>
+            <name-dialog @add-new="addNewNote"></name-dialog>
         </template>
 
         <template v-else>
-            <openedNote @show-notes="showNotes"
-                        :item="openedNote"></openedNote>
+            <opened-note @show-notes="showNotes"
+                        :item="openedNote"></opened-note>
         </template>
     </v-row>
 </template>
@@ -40,9 +40,9 @@ export default {
         }
     },
     components: {
-        nameDialog,
+        "name-dialog": nameDialog,
         note,
-        openedNote
+        "opened-note": openedNote
     },
     methods: {
         addNewNote(name, text) {
